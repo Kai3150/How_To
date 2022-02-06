@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="layout">
+  <meta name="viewport" content="width=device-width">
+  <title>ホームページのパーツの名称</title>
+  <link rel="stylesheet" media="all" href="css/style.css">
+  <link href="code-prettify/prettify.css" type="text/css" rel="stylesheet">
+  <script type="text/javascript" src="code-prettify/prettify.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+  <script src="js/script.js"></script>
+</head>
+
+<body id="top" onload="prettyPrint()">
+  <div id="wrapper">
+
+    <div id="sidebar">
+      <div id="sidebarWrap">
+
+        <nav id="mainnav">
+          <p id="menuWrap"><a id="menu"><span id="menuBtn"></span></a></p>
+          <div class="panel">
+            <ul>
+              <li><a href="#top">top</a></li>
+              <li><a href="#sec01">ヘッダー</a></li>
+              <li><a href="#sec02">ナビゲーション</a></li>
+              <li><a href="#sec03">コンテンツ</a></li>
+              <li><a href="#sec04">サイドバー</a></li>
+              <li><a href="#sec05">フッター</a></li>
+
+            </ul>
+            <ul id="sns">
+              <li><a href="#" target="_blank"><img src="images/iconFb.png" width="20" height="20" alt="FB"></a></li>
+              <li><a href="#" target="_blank"><img src="images/iconTw.png" width="20" height="20" alt="twitter"></a></li>
+              <li><a href="#" target="_blank"><img src="images/iconInsta.png" width="20" height="20" alt="Instagram"></a></li>
+              <li><a href="#" target="_blank"><img src="images/iconYouTube.png" width="20" height="20" alt="You Tube"></a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+
+    <div id="content">
+
+      <section>
+        <header>
+          <h2><span>ホームページに用いられるパーツの名称</span></h2>
+        </header>
+        <div class="innerS">
+          <p>ホームページのレイアウトを考える上で、ホームページ内に用いられるパーツの種類と名称を知っておくことが重要です。誤った名称で伝えてしまうと、コミュニケーションのすれ違いが発生してしまうため、しっかりと把握しておきましょう。</p>
+        </div>
+      </section>
+
+      <section id="sec01">
+        <header>
+          <h2><span>ヘッダー</span></h2>
+        </header>
+
+        <div class="innerS">
+
+            <p><img src="https://webst8.com/blog/wp-content/uploads/2018/02/html-sample-header.png" alt="ヘッダー例"></p>
+            <p>どのページにも共通で設置し、サイトのロゴやお問い合わせ・資料請求のボタンなどの重要なアクションを促すものが配置されることが多いパーツです。ユーザーがサイトを開いた際に、最初に見る部分なので、第一印象として最も重要な役割を果たします。スクロールしても常に表示しておく「固定ヘッダー」のようなテクニックもあります。</p>
+            <h2>ヘッダーの作り方</h2>
+            <pre class="prettyprint linenums">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;ヘッダーサンプル&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;header.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+
+    &lt;header&gt;
+      &lt;h1 class=&quot;title&quot;&gt;タイトル&lt;/h1&gt;
+      &lt;nav class=&quot;nav&quot;&gt;
+        &lt;ul class=&quot;menu-group&quot;&gt;
+          &lt;li class=&quot;menu-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;項目1&lt;/a&gt;&lt;/li&gt;
+          &lt;li class=&quot;menu-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;項目2&lt;/a&gt;&lt;/li&gt;
+          &lt;li class=&quot;menu-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;項目3&lt;/a&gt;&lt;/li&gt;
+          &lt;li class=&quot;menu-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;項目4&lt;/a&gt;&lt;/li&gt;
+          &lt;li class=&quot;menu-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;項目5&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/nav&gt;
+    &lt;/header&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+            <br>
+            <h4>html</h4>
+            <ul>
+              <li>header要素でヘッダとなるコンテンツを表します。(headerタグとheadタグは別物なので注意！)</li>
+              <li>h1タグを使ってサイト名を表示させます。</li>
+              <li>navタグを使ってナビゲーションを設置します。</li>
+              <li>ulタグ(箇条書き)・liタグ(リスト内容)を使ってナビメニューの項目を追加します。<br>→その後ブラウザで確認</li>
+            </ul>
+
+
+
+          <pre class="prettyprint linenums">
+            header{
+              displey:flex;
+              width:100%;
+              height:100px;
+              background-color: darkgrey;
+              align-items: center;
+            }
+
+            .title{
+              margin-right: auto;
+            }
+
+            .menu-item{
+              list-style: none;
+              display: inline-block;
+              padding: 10px;
+            }
+          </pre>
+
+          <h4>css</h4>
+          <ul>
+            <li>「display:flex」で、要素を横並びにします。</li>
+            <li>「align-items:center」で。ヘッダー内要素の上下幅をセンタリングします。</li>
+            <li>タイトルだけを左端に移動させるために、「margin-right:auto」と設定します。</li>
+            <li>リストタグはデフォルトで「・」などのマーカー文字が先頭に表示されるため、「list-style:none」を指定して表示しないよう設定しています。</li>
+            <li>「display:inline-box」で、メニュー項目を横並びで表示させます。</li>
+          </ul>
+          <h2>ヘッダー完成例</h2>
+          <p class="img"><img src="images/ヘッダー完成例.jpg"  alt="ヘッダー完成例"></p>
+        </div>
+
+      </section>
+
+      <section id="sec02">
+        <header>
+          <h2><span>ナビゲーション</span></h2>
+        </header>
+         <div class="innerS">
+          <p><img src="images/ナビゲーション.jpg" alt="ナビゲーション例"></p>
+          <p>人によって「メニュー」と呼ぶこともあります。開発用語では「ナビゲーション」が一般的になります。大きな目次を「グローバルナビゲーション」、小さな目次を「サブナビゲーション」と呼びます。ユーザーを目的のコンテンツに誘導することや、検索エンジンににアピールすることができます。</p>
+
+              <h2>ナビゲーションの作り方</h2>
+              <pre class="prettyprint linenums">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;title&gt;ナビゲーションサンプル&lt;/title&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;navigation.css&quot;&gt;
+    &lt;/head&gt;
+    &lt;nav&gt;
+        &lt;h2&gt;ナビゲーションのタイトルです。&lt;/h2&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href=”#”&gt;TOP&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=”#”&gt;ABOUT&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt; &lt;a href=”#”&gt;CONTACT&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+
+    &lt;body&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+            <h4>html</h4>
+              <ul>
+                <li>nav要素で主要なナビーションのセクションを表します。<br>(ナビゲーションセクションの例としてメニュー・目次などがある)</li>
+                <li>h2タグを使ってサイト名を表示させます。</li>
+                <li>ulタグ(箇条書き)・liタグ(リスト内容)を使ってナビメニューの項目を追加します。</li>
+              </ul>
+              <pre class="prettyprint linenums">
+nav {
+    text-align: center;
+}
+
+nav ul {
+    margin: 0 ;
+    padding: 0 ;
+}
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    width: 10%; /* ここで項目の幅を指定します */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}</pre>
+                <h4>css</h4>
+            <ul>
+              <li>リストタグはデフォルトで「・」などのマーカー文字が先頭に表示されるため、「list-style:none」を指定して表示しないよう設定しています。</li>
+              <li>「display:inline-blockで、改行を入れることなく、横にメニュー要素を並べることができます。</li>
+              <li>「text-decoration:none」   で、テキストの装飾を行わないことを表します。</li>
+            </ul>
+
+            <h2>ナビゲーション完成例</h2>
+            <p class="img"><img src="images/ナビゲーション完成例.jpg"  alt="ナビゲーション完成例"></p>
+
+        </div>
+      </section>
+
+      <section id="sec03">
+        <header>
+          <h2><span>コンテンツ</span></h2>
+        </header>
+        <div class="inner">
+          <div class="article">
+            <img src="images/コンテンツ.jpg" width="370" height="224" alt="コンテンツ例">
+            <p>ページ内のメインとなる要素の部分です。基本的にホームページの訪問者はこの内容を目当てに来るので、コンテンツが見えやすいようにヘッダーやナビゲーションを一時的に隠すこともあります。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="sec04">
+        <header>
+          <p><img src="" alt=""></p>
+          <h2><span>サイドバー</span></h2>
+        </header>
+        <div class="inner">
+          <div class="article">
+            <img src="images/サイドバー.jpg" width="370" height="224" alt="サイドバー例">
+            <p>コンテンツの隣に、カテゴリ一覧や関連の記事一覧、広告バナーなどを設置したりする際にとるエリアをサイドバーと呼んでいます。サイドバーを設置するとユーザーはサイドバーから知りたい情報に簡単に辿り着くことができます。また問い合わせのフォームなどと合わせることによって、ユーザーによる商品購入や資料請求などの行動に繋げることができます。</p>
+          </div>
+        </div>
+
+        <div class="innerS">
+          <h3>サイドバーの作り方</h3>
+          <pre class="prettyprint linenums">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;title&gt;サイドバーサンプル&lt;/title&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;sidebar.css&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;article&gt;
+            &lt;div class=&quot;side&quot;&gt;
+                &lt;p&gt;サイドバー&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;content&quot;&gt;
+                &lt;p&gt;メインコンテンツ&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+          <br>
+          <h4>html</h4>
+          <ul>
+            <li>サイドバーとメインコンテンツ部分をdivタグで囲みます。(divではなくarticleやasideでも良い) </li>
+          </ul>
+          <br>
+          <pre class="prettyprint linenums">
+body {
+    font-family:'Noto Sans JP',sans-serif;
+    background-color:#f6f5f4;
+}
+
+.side {
+  background-color:#ff838b;
+  width:100px;
+  height:300px;
+  text-align:center;
+}
+
+.content {
+  background-color:#b3d874;
+  width:250px;
+  height:300px;
+  text-align:center;
+  margin-left:10px;/*サイドバーとメインコンテンツの間に隙間                    をあけた*/
+}
+
+article {
+  display:flex;/*サイドバーとメインコンテンツを横並びにする                指定をした*/
+}</pre>
+          <br>
+          <h4>css</h4>
+          <ul>
+            <li>親要素を作って「display:flex;」と書いて要素を横並びにします。(親要素を作らなければうまく動作しません)</li>
+            <li>サイドバーとメインコンテンツの隙間のスペースは、marginの値を調節することでレイアウトを整えることができます。</li>
+            <li>親要素に「display:flex;」を指定し、固定して追従させたい箇所に、CSSで「position: sticky」とコーディングすれば、サイドバーを固定することができます。</li>
+          </ul>
+          <h2>サイドバー完成例</h2>
+          <p class="img"><img src="images/サイドバー完成例.jpg"  alt="サイドバー完成例"></p>
+        </div>
+      </section>
+
+      <section id="sec05">
+        <header>
+          <h2><span>フッター</span></h2>
+        </header>
+
+        <div class="inner">
+          <div class="article">
+            <img src="https://i0.wp.com/pecopla.net/wp-content/uploads/2018/02/co_2-1.png?fit=486%2C270&ssl=1" width="370" height="224" alt="">
+            <p>
+              ページの一番下にあるコピーライトなどを記載する箇所をフッターと呼びます。
+              フッター内にナビゲーションを設置することもあり、それをフッターナビゲーションと呼びます。
+              ここに企業情報や運営元などをしっかり書くことで、コンテンツの信頼性をアピールするということもあります。
+            </p>
+          </div>
+        </div>
+
+        <div class="innerS">
+          <h2>フッターの作り方</h2>
+          <pre class="prettyprint linenums">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;title&gt;フッターサンプル&lt;/title&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;footer.css&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;footer id=&quot;footer&quot;&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href=&quot;cat1/index.html&quot;&gt;カテゴリ1&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;cat2/index.html&quot;&gt;カテゴリ2&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;cat3/index.html&quot;&gt;カテゴリ3&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;cat4/index.html&quot;&gt;カテゴリ4&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;p&gt;Copyright (C) All Rights Reserved.&lt;/p&gt;
+        &lt;/footer&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+          <br>
+          <h4>html</h4>
+          <ul>
+            <li>フッターを作るには、footerタグを使用します。</li>
+            <li>フッターはbodyの終了タグの直前に書くことによって、コンテンツの最後尾に表示できます。</li>
+          </ul>
+          <br>
+
+          <pre class="prettyprint linenums">
+#footer {
+    border-top: solid 1px lightgray;
+    padding-bottom: 10px;
+}
+
+#footer ul {
+    text-align: center;
+}
+
+#footer ul li {
+    padding: 0 4px;
+    display: inline;
+}
+
+#footer p {
+    text-align: center;
+}</pre>
+
+          <br>
+          <h4>css</h4>
+          <ul>
+            <li>display:inlineは、li要素を横に並べて表示するようになります。</li>
+            <li>#footer ulでdisplay:flexと宣言してフレックスボックスを利用しても、同様に横に並べて表示できますが、text-align:centerが効かなくなります。そのため、marginやjustify-content:center(フレックスアイテムを中央寄せ)などで調整する必要があります。</li>
+          </ul>
+          <br>
+
+          <h2>フッター完成例</h2>
+          <p class="img"><img src="images/フッター完成例.jpg"  alt="フッター完成例"></p>
+        </div>
+
+      </section>
+    </div>
+  </div>
+
+</body>
+</html>
