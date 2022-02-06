@@ -55,10 +55,13 @@
             <p>見出しを作るときに使用するタグです。h1が一番大きな文字であり、サイトのメインとなる見出しに使われます。h2,h3…h6と数字が大きくなるにつれて小さな文字の見出しとなります。</p>
             <pre class="prettyprint linenums">
 &lt;h1&gt;メインタイトルなど&lt;/h1&gt;
-&lt;h2&gt;サブタイトルなど&lt;/h2&gt;
-&lt;h3&gt;さらに小さいタイトル&lt;/h3&gt;</pre>
+  &lt;h2&gt;サブタイトルなど&lt;/h2&gt;
+    &lt;h3&gt;さらに小さいタイトル&lt;/h3&gt;
+      &lt;h4&gt;見出し（h4）&lt;h4&gt;
+        &lt;h5&gt;見出し（h5）&lt;h5&gt;
+          &lt;h6&gt;見出し（h6）&lt;h6&gt;</pre>
 
-            <br>
+          <br>
             <h4>2.aタグ</h4>
             <p>他のページへのリンクを貼ったりする際に使用します。</p>
             <pre class="prettyprint linenums">
@@ -81,7 +84,7 @@
 
             <br>
             <h4>5.tableタグ</h4>
-            <p>テーブル（表）を作成するときに使用するタグです。<p/>
+            <p>テーブル（表）を作成するときに使用するタグです。</p>
             <h6>&lt;table&gt;</h6><br>
             <p>表の開始を示すタグです。中には&lt;tr&gt;・&lt;td&gt;・&lt;th&gt;が入ります。何も入力していない場合では枠線は表示されず、border属性に"1"を指定することで表示されるようになります。</p>
             <h6>&lt;tr&gt;</h6>
@@ -90,14 +93,25 @@
             <p>table dateの略でテーブルのセルに使用します。サンプルの中の内容の部分と言えます。</p>
             <h6>&lt;th&gt;</h6>
             <p>table headerの略。テーブルの見出しのセルに使用します。</p>
-            <pre class="prettyprint linenums">
+            <h4>記述例</h4>
+              <pre class="prettyprint linenums">
 &lt;table border="1"&gt;
-&lt;tr&gt;
-&lt;th&gt;見出し&lt;/th&gt;
-&lt;th&gt;見出し&lt;/th&gt;
-&lt;th&gt;見出し&lt;/th&gt;
-&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;&lt;&gt;</pre>
-
+    &lt;tr&gt;
+        &lt;th&gt;見出しその１&lt;/th&gt;
+        &lt;th&gt;見出しその２&lt;/th&gt;
+        &lt;th&gt;見出しその３&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;内容&lt;/td&gt;
+        &lt;td&gt;内容&lt;/td&gt;
+        &lt;td&gt;内容&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;内容&lt;/td&gt;
+        &lt;td&gt;内容&lt;/td&gt;
+        &lt;td&gt;内容&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</pre>
               <br>
               <h4>6.brタグ（改行）</h4>
               <p>文章の途中で改行したいときに使用します。段落内で強制的に改行させる際に使うのですが、連続で使用して空白行を作成するために使わないようにしましょう。</p>
@@ -107,14 +121,29 @@
               <p>リストを作成するときに使うタグです。</p>
               <h6>&lt;ul&gt;</h6>
               <p>unordered listの略。順番のないリストを作る際に使います。（はじめに付く記号の種類はtype属性で指定することができます。）</p>
+                <pre class="prettyprint linenums">
+&lt;ul type="A"&gt;
+    &lt;li&gt;項目&lt;/li&gt;
+    &lt;li&gt;項目&lt;/li&gt;
+    &lt;li&gt;項目&lt;/li&gt;
+&lt;/ul&gt;</pre>
               <h6>&lt;ol&gt;</h6>
               <p>ordered listの略。1,2,3〜やa,b,cなど順番のあるリストを作成する際に使います。はじめに付く記号や数字の種類はtype属性で指定することができます。</p>
-              <h6>&lt;li&gt;</h6>
-              <p>list itemの略。&lt;ol&gt;〇〇&lt;/li&gt;や&lt;ul&gt;〇〇&lt;/ul&gt;の中にあたる〇〇の部分に記述します。リストの各項目を作成するときに使います。</p>
 
+              <pre class="prettyprint linenums">
+&lt;ol type="square"&gt;
+    &lt;li&gt;項目&lt;/li&gt;
+    &lt;li&gt;項目&lt;/li&gt;
+    &lt;li&gt;項目&lt;/li&gt;
+&lt;/ol&gt;</pre>
+              <h6>&lt;li&gt;</h6>
+              <p>list itemの略。&lt;ol&gt;〇〇&lt;/ol&gt;や&lt;ul&gt;〇〇&lt;/ul&gt;の中にあたる〇〇の部分に記述します。リストの各項目を作成するときに使います。</p>
               <br>
               <h4>8.scriptタグ</h4>
-              <p>リストを作成するときに使うタグです。</p>
+              <p>文書にJavaScriptなどの「スクリプト」と呼ばれるものを文書内に埋め込んだりするために使うタグです。</p>
+              <p>この記述がheadタグやbodyタグの中にある場合、JavaScriptを呼び出して何かをしようとしていると認識しましょう。</p>
+              <pre class="prettyprint linenums">
+&lt;script src="script.js"&gt;  &lt;/script&gt;</pre>
         </div>
       </section>
 
