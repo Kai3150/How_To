@@ -73,6 +73,11 @@ img{
 	max-width: 100%;
 	height: auto;
 	align-self: center;
+	border: 9px solid #00cc00;
+}
+
+#sns img{
+	border: none;
 }
 
 section{
