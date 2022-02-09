@@ -71,27 +71,37 @@
             <p>スペースが美しければ、サイトも美しくなります（左上のスライド参照）。最低でも本文の文字の１文字分の余白（右下の図で薄い赤色で示したくらいの余白）を設けるようにしましょう。２文字分くらいの余白をとると、かなりゆったりした資料になり、確実に見やすくなります。研究発表では必要のないことかもしれませんが、余白が多いほどオシャレな印象になりやすいです。</p>
             <p style="color: red">*わざとデザインの面で余白を取らない場合もありますので、必ずしも余白が必要になるわけではありません。</p>
 
-            <pre class="prettyprint linenums">
-div{
-  padding: 20px;
-}</pre>
-
           </div>
         </div>
+        <div class="innerS">
+          <pre class="prettyprint linenums">
+div{
+  margin: 100px;
+}</pre>
+          <p>このように余白を設けたい要素にpaddingやmarginを指定することで要素間で空間を作る事ができます。paddingとmarginの違いについては以下の図を参照してください。</p>
+          <img src="images/padding&margin.jpg">
+          <p>borderは、その要素の縁を囲ったりするときに使うものなので余白を作る時には用いません。borderを指定しない限りどちらで余白をとっても同じと考えても良いでしょう。</p>
+          <h5>Tips</h5>
+          <p>解像度によって異なりますが、1cm＝96pxです。詳しくは<a href="css.html">CSSの基礎</a>の値と単位についてを参照</p>
+        </div>
+
         <div class="innerS">
 
           <h3>余裕をもって配置する</h3>
           <p>
-          しばしば枠の中に単語や文章を入れることがあります。このとき注意したいのは、文字と枠の間隔です。文字が枠のギリギリになってしまうと、枠の近くの文字が非常に読みにくくなります。
-          文字は線の要素で、枠線も線の要素であるため、互いに接近したときに干渉し合ってしあうためです。「ギリギリだけど収まったからいい」なんてことはありません。枠の中に、余裕をもって文章を配置しましょう。
-          では、いくつかの例を挙げて説明します。
+            しばしば枠の中に単語や文章を入れることがあります。このとき注意したいのは、文字と枠の間隔です。文字が枠のギリギリになってしまうと、枠の近くの文字が非常に読みにくくなります。
+            文字は線の要素で、枠線も線の要素であるため、互いに接近したときに干渉し合ってしあうためです。「ギリギリだけど収まったからいい」なんてことはありません。枠の中に、余裕をもって文章を配置しましょう。
+            では、いくつかの例を挙げて説明します。
           </p>
 
 
             <h3>文章を枠内に入れる場合</h3>
             <img src="https://tsutawarudesign.com/miyasuku/miyasuku-11.svg" >
-            <p>文章を枠内に入れる場合は、上下に１文字分ぐらい余白を確保するといいでしょう。</p>
-
+            <p>文章を枠内に入れる場合は、上下に１文字分ぐらい余白を確保するといいでしょう。図の場合だと枠の中に余白を作っているのでpaddingを指定します。</p>
+          <pre class="prettyprint linenums">
+p{
+  padding: 60px;
+}</pre>
             <h3>語句を枠内に入れる場合</h3>
             <img src="https://tsutawarudesign.com/miyasuku/miyasuku-12.svg" >
             <p>語句を枠内に入れる場合は、枠は大きめにとりましょう。ちょっとしたことですが、こういった積み重ねが全体の読みやすさを大きく変えます。</p>
@@ -110,14 +120,86 @@ div{
         <div class="inner">
           <div class="article">
             <img src="images/soroeru.png" width="370" height="224" alt="">
+            <br>
             <p>上のようにサイト全体を格子上に捉えることでそれぞれの要素を配置しやすくなります。それに加えて図の大きさや文章の長さなどを揃えることも印象をかなり良くします。</p>
-            <p>しかし、新聞記事のように見出しや小さな図が入る場合は、最初のようにグリッドを応用する必要があります。</p>
+            <p>しかし、新聞記事のように見出しや小さな図が入る場合は、最初のようにグリッドを応用する必要があります。そこで以下ではグリッドレイアウトについて説明します。</p>
           </div>
+        </div>
+        <div class="innerS">
+
+          <h3>グリッドレイアウト</h3>
+          <p>グリッドレイアウトは上の図のようにページを格子状に分割することである程度全体のレイアウトを揃えるcssの方法です。レイアウトの鉄則は全体から細部の順番で作っていく事です。細部のレイアウトから作ると最終的に全体としてバランスが悪くなることが多いです。なのでここで全体レイアウトについて学んでおきましょう。</p>
+          <h4>HTML</h4>
           <pre class="prettyprint linenums">
-              body{
-                grid:
-              }
-          </pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;grid.css&quot;&gt;
+        &lt;title&gt;グリッドレイアウト&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;グリッドレイアウトを学ぼう&lt;/h1&gt;
+
+        &lt;p class=&quot;row1&quot;&gt;
+            グリッドは、列と行を定義する水平線と垂直線の集合が交差したものです。
+            要素をグリッド上の行と列の中に配置することができます。
+        &lt;/p&gt;
+        &lt;img class=&quot;row1&quot; src=&quot;dog1.jpg&quot;&gt;
+
+        &lt;img class=&quot;row2&quot; src=&quot;dog2.jpg&quot;&gt;
+        &lt;p class=&quot;row2&quot;&gt;
+            HTMLだけでは、左上に張り付いた状態になっていますがグリッドレイアウトを適用すれば
+            大体どの位置に画像や文章を配置するかなどを決める事ができます。
+        &lt;/p&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+          <h4>CSS</h4>
+          <pre class="prettyprint linenums">
+body{
+  display: grid;
+  grid-template-columns: 50px 1fr 20px 1fr 50px;
+  grid-template-rows:
+  [head] 100px
+  [row1] auto
+  [row2] auto;
+row-gap: 20px;
+}
+
+h1{
+  grid-column: 2 / -2;
+  grid-row: head;
+}
+
+.row1{ grid-row: row1 }
+
+.row2 { grid-row: row2 }
+
+p{ grid-column: 2 / 3}
+
+img{ grid-column: 4 / 5}</pre>
+          <h4>完成例</h4>
+          <img src="images/grid_kansei1.png" >
+          <p>
+            上から一つずつ見てみましょう。まずhtmlファイルをみてみると目次や文章や画像などの５つの要素があることがわかります。これらの要素をcssのgridを用いいて大雑把に配置していきます。<br>
+            まず初めにbodyタグでdisplayプロパティをgridと指定しbodyの中身をグリッドレイアウトモードにします。
+            次に「grid-template-columns: 50px 1fr 20px 1fr 50px;」で横幅をスペース区切りで指定します。今回は両サイド50pxとりそれを除いた画面をさらに1fr,20px,1frの順に分割しています。<br>
+            次に行の分割について、行はcolumnsの時と同様に「grid-template-columns: 100px auto auto;」のように書くこともできますが、今回は分かりやすくラインに名前をつけて幅を指定しますラインは<span style="color: red;">[]</span>で囲むことで名前をつけれます。
+            ここまでを完成図で確認してみましょう。
+          </p>
+          <img src="images/grid_kansei2.png" >
+          <p>
+            このままでは完成図のようなものには、なりません。それぞれの要素をそれぞれのセルの中に配置していきましょう。要素の配置にはライン番号を用います。緑の列番号を見ていると左上の列から一つずつ数えます。また最後から「-1,-2」のように数えることもできます。青の行番号も同様です。<br>
+            &lt;h1&gt;で囲まれる見出し部分は、最終的には一番上の真ん中あたりに表示したいのでcssでh1要素に対して「grid-column: 2 / -2;」を指定します。これは列番号2番目から最後から2番目の列の中に配置するという意味です。さらに行について「grid-row: head;」を指定します。行も列と同様に「grid-row: 1 / 2;」と指定することもできますが今回は行名を指定しているのでそれを用いましょう。
+            それより下の文章について文章と画像を一つのペアとしてそれぞれのタグにクラスをつけてグループ化します。その為cssでクラスごとに「grid-row: row1;」「grid-row: row2;」と指定することで行を決める事ができます。
+            文章は左側、画像は右側に表示したいので&lt;p&gt;要素に「grid-column: 2 / 3;」,&lt;img&gt;要素に「grid-column: 4 / 5;」を指定します。これで完成です。グリッドレイアウトはデザインの基本なのでこれ以降のレイアウトのルールを実現するのにたいへん役に立ちます。
+          </p>
+
+        </div>
+
+        <div class="inner">
+
           <div class="article">
             <h3>タイトルより上に中身を書かない</h3>
             <img src="images/titleiti.png" width="370" height="224" alt="タイトルの位置">
@@ -128,13 +210,18 @@ div{
             <img src="images/sorottemieru.png" width="400" height="200" alt="タイトルの位置">
             <p>上で説明したようにサイトの要素はできるだけ位置を揃えて配置したほうが見やすくなります。しかし位置を揃えにくい要素や、位置を揃えても揃って見えない要素も存在します。具体的にはイラストやグラフなどは輪郭が曖昧なので、位置を合わせてもフワフワと余白に浮いているように見えてしまいます。このような場合は、要素の背景に薄い灰色(既存の色と同色系)の四角形などを適用すると効果的です。便利なテクニックですが「囲い・枠」が多くなると全体が煩雑になるので汎用は避けましょう。また背景色に濃い色を使うのも美しくありません。</p>
           </div>
+        </div>
+        <div class="innerS">
           <pre class="prettyprint linenums">
-            <code>
-              body{
-                grid:
-              }
-            </code>
-          </pre>
+img{
+  border: 9px solid #00cc00;
+}
+/*
+使い方: border: 枠の太さ 形 色;
+border-radius: 枠の太さ;   border-style: 形;   border-color: 色;
+このように個別に指定することもできます。
+*/</pre>
+          <p>上の画像のように緑の四角の枠を作ります。一番オーソドックスなやり方です。他にもいろいろな枠の形があります。さらに詳しく知りたい人は<a href="https://developer.mozilla.org/ja/docs/Web/CSS/border" target="_blank" rel="noopener">borderの公式リファレンス</a>を参照してください。</p>
         </div>
       </section>
 
