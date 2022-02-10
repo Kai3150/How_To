@@ -23,10 +23,9 @@
           <div class="panel">
             <ul>
               <li><a href="#top">top</a></li>
-              <li><a href="#sec01">1. テキストエディタの用意</a></li>
-              <li><a href="#sec02">2. ブラウザの用意</a></li>
-              <li><a href="#sec03">リッチスニペット</a></li>
-              <li><a href="#sec04">コンテンツの属性</a></li>
+              <li><a href="#sec01">テキストエディタの用意</a></li>
+              <li><a href="#sec02">ブラウザの用意</a></li>
+              <li><a href="#sec03">HTMLファイルの作成、記述、アップロード</a></li>
             </ul>
             <ul id="sns">
               <li><a href="https://twitter.com/m_seminar" target="_blank"><img src="images/iconTw.png" width="20" height="20" alt="twitter"></a></li>
@@ -42,7 +41,7 @@
 
       <section>
         <header>
-          <h2><span>HTML & CSS の開発環境を用意しよう！</span></h2>
+          <h2><span>Webサイトの作り方</span></h2>
         </header>
         <div class="innerS">
           <p>
@@ -61,7 +60,7 @@
 
       <section id="sec01">
         <header>
-          <h2><span>1. テキストエディタの用意</span></h2>
+          <h2><span>テキストエディタの用意</span></h2>
         </header>
         <div class="innerS">
           <p>
@@ -90,7 +89,7 @@
 
       <section id="sec02">
         <header>
-          <h2><span>2. ブラウザの用意</span></h2>
+          <h2><span>ブラウザの用意</span></h2>
         </header>
         <div class="innerS">
           <p>
@@ -105,6 +104,69 @@
         </div>
       </section>
 
+
+      <section id="sec03">
+        <header>
+          <h2><span>HTMLファイルの作成、記述、アップロード</span></h2>
+        </header>
+
+        <div class="innerS">
+
+          <h4>2.HTMLファイルを作成する</h4>
+          <p>HTMLでWebサイトを作るために、まず初めにテキストエディタで拡張子が「.html」のファイルを作ります。</p>
+
+
+
+          <h4>3.コードを書く</h4>
+          <p>作成したHTMLファイルを使用し、タグを組み合わせてコードを書いていきます。コードを記載すると、指定した内容がWebブラウザ上に表示されます。以下は、コードの例となります。</p>
+
+          <pre class="prettyprint linenums">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;タイトル&lt;/title&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+        &lt;h1&gt;文章のタイトル&lt;/h1&gt;
+        &lt;p&gt;本文&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+          <h5>&#9312;ドキュメントタイプ宣言をおこなう</h5>
+          <p>「!DOCTYPE」とは文章の解釈に使うDTDを宣言するもので、HTML文章を作成する際HTMLタグよりも先頭に書くべきものがDOCTYPE宣言となります。<br></p>
+          <p>「DTD」とは「Documnt Type Definition」の略称で、「文章の定義」を意味します。HTMLのバージョンごとに、そのバージョンで使用できる要素（タグ）や属性の名前などの情報が定義されています。<br></p>
+          <p>たとえば、「!DOCTYPE HTML」と記されている場合は、これからDTDを宣言することを示し、その文書タイプが「HTML」であるという意味になります。</p>
+
+
+          <h5>&#9313;headタグの中にHTMLの情報を記入する</h5>
+          <p>HTMLではheadタグの中にHTMLの情報を記入するのが基本で、meta要素やタイトル、CSSやJavaScriptなどの外部ファイルについてもここで記載をおこないます。具体的な記載例は以下の通りです。</p><br>
+          <p>見出しにはh1タグを使用し、文章はpタグに記載します。</p>
+          <pre class="prettyprint linenums">
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;参照元&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+    &lt;title&gt;タイトル&lt;/title&gt;
+&lt;/head&gt;</pre>
+          <p>外部スタイルシートの読み込みには「link rel="stylesheet" herf="ファイル名.css"」というコードを使います。またHTMLファイルと外部CSSファイルが同じ階層にある場合はherf="ファイル名"とか書きます。</p>
+
+          <h5>&#9314;bodyタグの中にページのコンテンツ内容を記入する</h5>
+          <p>Webサイト上に表示させたい内容は、bodyタグの中に記載します。たとえば、自身のプロフィール内容を記載する場合は以下のように書きます。</p>
+
+          <pre class="prettyprint linenums">
+&lt;body&gt;
+    &lt;h1&gt;プロフィール&lt;/h1&gt;
+    &lt;p&gt;名前&lt;/p&gt;
+    &lt;p&gt;出身地&lt;/p&gt;
+&lt;/body&gt;
+</pre>
+
+          <h4>4.ファイルをアップロードする</h4>
+          <p>HTMLファイルが完成したら、Webサーバー上にファイルをアップロードします。ファイルをアップロードするためには、外部へファイルを送信するためのFTPソフトが必要になるので、事前にFTPソフトの設定を完了させておいてください。</p><br>
+          <p>その後、FTPソフトを開いてHTMLファイルを選択します。そのままWebサーバーにHTMLファイルをアップロードし、Webサーバーに設定しているアドレスをWebブラウザのアドレスバーへ入力して、HTMLファイルの内容が表示されるように設定しましょう。</p>
+        </div>
+      </section>
 
     </div>
 
