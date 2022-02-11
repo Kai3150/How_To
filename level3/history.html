@@ -5,13 +5,57 @@
   <meta name="description" content="layout">
   <meta name="viewport" content="width=device-width">
   <title>Webの歴史</title>
-  <link rel="stylesheet" media="all" href="css/style.css">
+  <link rel="stylesheet" media="all" href="../css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-  <script src="js/script.js"></script>
+  <script src="../js/script.js"></script>
 </head>
 
 <body id="top" >
   <div id="wrapper">
+
+    <div class="header">
+      <div class="cp_navi">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li>
+            <a href="#">初心者編<span class="caret"></span></a>
+            <div>
+              <ul>
+                <li><a href="../level1/tutorial1.html">チュートリアル1</a></li>
+                <li><a href="../level1/tutorial2.html">チュートリアル2</a></li>
+                <li><a href="../level1/tutorial3.html">チュートリアル3</a></li>
+                <li><a href="../level1/css.html">CSSについて</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">中級者編<span class="caret"></span></a>
+            <div>
+              <ul>
+                <li><a href="../level2/design.html">デザインとは</a></li>
+                <li><a href="../level2/layout.html">レイアウト1</a></li>
+                <li><a href="../level2/layout2.html">レイアウト2</a></li>
+                <li><a href="../level2/layout3.html">レイアウト3</a></li>
+                <li><a href="../level2/responsive.html">レスポンシブ</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">上級者編<span class="caret"></span></a>
+            <div>
+              <ul>
+                <li><a href="../level3/deploy.html">デプロイ</a></li>
+                <li><a href="../level3/seo.html">SEO</a></li>
+                <li><a href="../level3/marketing.html">マーケティング</a></li>
+                <li><a href="../level3/idea.html">アイデア</a></li>
+                <li><a href="../level3/law.html">法律</a></li>
+                <li><a href="../level3/history.html">歴史</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
 
     <div id="sidebar">
       <div id="sidebarWrap">
@@ -29,8 +73,8 @@
               <li><a href="#sec06">HTML5の誕生</a></li>
             </ul>
             <ul id="sns">
-              <li><a href="https://twitter.com/m_seminar" target="_blank"><img src="images/iconTw.png" width="20" height="20" alt="twitter"></a></li>
-              <li><a href="https://t.co/PtGWqwsb5g" target="_blank"><img src="images/iconInsta.png" width="20" height="20" alt="Instagram"></a></li>
+              <li><a href="https://twitter.com/m_seminar" target="_blank"><img src="../images/iconTw.png" width="20" height="20" alt="twitter"></a></li>
+              <li><a href="https://t.co/PtGWqwsb5g" target="_blank"><img src="../images/iconInsta.png" width="20" height="20" alt="Instagram"></a></li>
             </ul>
           </div>
         </nav>
@@ -55,7 +99,7 @@
         </header>
         <div class="inner">
           <div class="article">
-            <img src="images/tim.jpg" width="370" height="224" alt="tim" >
+            <img src="../images/tim.jpg" width="370" height="224" alt="tim" >
             <p>
               Webの生みの親はイギリス人のティム・バーナーズ＝リー博士です。インターネットの中でももっとも重要なシステムであるWWW(World Wide Web)を発明しました。
               ティムはCERN(セルン)という世界的に有名なスイスにある研究機関に在籍していました。
@@ -84,7 +128,7 @@
         </header>
         <div class="inner">
           <div class="article">
-            <img src="images/cerninfo.png" width="370" height="224" alt="cern.infoの画像">
+            <img src="../images/cerninfo.png" width="370" height="224" alt="cern.infoの画像">
             <p>
               1991年8月6日、ティムは<a href="http://info.cern.ch/hypertext/WWW/TheProject.html">世界で最初のWebサイト</a>を公開しました。一般的にはこの日をWebの誕生日とすることが多いようです。ティムがWebを発表した時の目玉となったのが、「Hyper Text(ハイパーテキスト)」と呼ばれる文書同士を繋げる仕組みです。ハイパーテキストとは、その名前の通り「すごい文字」ということです。今では当たり前になっていることですが、文字をクリックすると他のWebページに移動するいわゆる「リンク」という機能がありますね。その機能を持っている文書のことを「ハイパーテキスト」と呼んだのです。ティムがWeb（サイト）を考案したそもそもの目的が、研究員のデータや文献を相互に繋げることでしたからね。ティムは、それらのWebサイトをつくるための約束事を「HyperText Markup Language(ハイパーテキスト・マークアップ・ランゲージ)の頭文字をとってHTMLと名付けました。
             </p>
@@ -118,7 +162,7 @@
         </header>
         <div class="inner">
           <div class="article">
-            <img src="images/w3c.jpeg"width="370" height="224" alt="w3c">
+            <img src="../images/w3c.jpeg"width="370" height="224" alt="w3c">
             <p>
               Webを発明した当初からティムが所属していたCERNでは、本来の物理粒子学の研究に力を注ぎたいという意向があったそうです。そんなときにティムにとって大きな力になったのがマサチューセッツ工科大学(MIT)の教授であるマイケル・ダートウゾス博士でした。マイケルは元々、コンピュータ科学の研究者としてMITで活躍をしていてWebの可能性に、強く興味を示していたようです。
               そして、CERNや、インターネットのベースとなる技術を作ったアメリカ国防省のサポートを得て、1994年に、マイケルが所長を務めているMITのコンピュータ科学研究所(LCS、現在のCSAIL)にW3Cを設立し、同時にティムもMITに所属することになりました。意外にもWebはヨーロッパ生まれ、アメリカ育ちだったのですね。現在のW3Cは、アメリカのMITと日本の慶應義塾大学、フランスの欧州情報処理数学研究コンソーシアム、そして中国の北京航空大学の4つのホスト機関を中心に世界で約400社のW3Cメンバー企業との共同運営で進められています。
@@ -133,7 +177,7 @@
         </header>
         <div class="inner">
           <div class="article">
-            <img src="images/html5.png" width="300" height="200" alt="html5">
+            <img src="../images/html5.png" width="300" height="200" alt="html5">
             <p>
               そして、グーグル、アマゾン、フェイスブック、iPhoneなど数えきれないほどのサービスやビジネスが誕生してきました。そして2014年にW3Cが満を持して「HTML5」という次世代HTMLを正式にリリースする予定になっています。HTML5は、これまでのWebサイトを作るための技術としての役割だけでなく、アプリの制作を前提とすることなど大幅な進化を遂げます。Windowsだろうと、Macであろうと、iPhoneでも、Androidでも、どんな環境でも同じようにアプリを動かすことができるのです
               さらに、もっと言うと、パソコンやスマートフォンだけではありません。HTML5が動く場所は、ブラウザーさえあれば、どこだって良いのです。分かり易いところで言うと、テレビ、カーナビ、駅の電子看板など。そして最近は、エアコン、冷蔵庫、洗濯機などモニタを備えているものなら、どこにでもブラウザーを載せて、Webと繋げる動きが毎日のようにニュースになってきています。
@@ -141,6 +185,18 @@
           </div>
         </div>
       </section>
+
+      <div class="nav-links">
+				<a class="prev page-numbers" href="law.html">«</a><!-- 現在の前のページへのリンク -->
+				<a class="page-numbers" href="deploy.html">1</a>
+				<a class="page-numbers" href="seo.html">2</a>
+				<a class="page-numbers" href="marketing.html">3</a>
+				<a class="page-numbers" href="idea.html">4</a>
+				<a class="page-numbers" href="law.html">5</a>
+				<a class="page-numbers current" href="history.html">6</a>
+			  </div>
+
+
 
       <section></section>
 

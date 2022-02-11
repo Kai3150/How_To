@@ -5,16 +5,59 @@
 	<meta name="description" content="SEO">
 	<meta name="viewport" content="width=device-width">
 	<title>SEO</title>
-	<link rel="stylesheet" media="all" href="css/style.css">
-	<link href="code-prettify/prettify.css" type="text/css" rel="stylesheet">
-	<script type="text/javascript" src="code-prettify/prettify.js"></script>
+	<link rel="stylesheet" media="all" href="../css/style.css">
+	<link href="../code-prettify/prettify.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="../code-prettify/prettify.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-	<script src="js/script.js"></script>
+	<script src="../js/script.js"></script>
 </head>
 
 
 <body id="top" onload="prettyPrint()">
 	<div id="wrapper">
+		<div class="header">
+			<div class="cp_navi">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li>
+						<a href="#">初心者編<span class="caret"></span></a>
+						<div>
+							<ul>
+								<li><a href="../level1/tutorial1.html">チュートリアル1</a></li>
+								<li><a href="../level1/tutorial2.html">チュートリアル2</a></li>
+								<li><a href="../level1/tutorial3.html">チュートリアル3</a></li>
+								<li><a href="../level1/css.html">CSSについて</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">中級者編<span class="caret"></span></a>
+						<div>
+							<ul>
+								<li><a href="../level2/design.html">デザインとは</a></li>
+								<li><a href="../level2/layout.html">レイアウト1</a></li>
+								<li><a href="../level2/layout2.html">レイアウト2</a></li>
+								<li><a href="../level2/layout3.html">レイアウト3</a></li>
+								<li><a href="../level2/responsive.html">レスポンシブ</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#">上級者編<span class="caret"></span></a>
+						<div>
+							<ul>
+								<li><a href="../level3/deploy.html">デプロイ</a></li>
+								<li><a href="../level3/seo.html">SEO</a></li>
+								<li><a href="../level3/marketing.html">マーケティング</a></li>
+								<li><a href="../level3/idea.html">アイデア</a></li>
+								<li><a href="../level3/law.html">法律</a></li>
+								<li><a href="../level3/history.html">歴史</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
 
 		<div id="sidebar">
 			<div id="sidebarWrap">
@@ -31,8 +74,8 @@
 							<li><a href="#sec05">その他の指標</a></li>
 						</ul>
 						<ul id="sns">
-							<li><a href="https://twitter.com/m_seminar" target="_blank"><img src="images/iconTw.png" width="20" height="20" alt="twitter"></a></li>
-							<li><a href="https://t.co/PtGWqwsb5g" target="_blank"><img src="images/iconInsta.png" width="20" height="20" alt="Instagram"></a></li>
+							<li><a href="https://twitter.com/m_seminar" target="_blank"><img src="../images/iconTw.png" width="20" height="20" alt="twitter"></a></li>
+							<li><a href="https://t.co/PtGWqwsb5g" target="_blank"><img src="../images/iconInsta.png" width="20" height="20" alt="Instagram"></a></li>
 						</ul>
 					</div>
 				</nav>
@@ -51,7 +94,7 @@
 				<div class="inner">
 					<div class="article">
 						<h3>クローラーと検索エンジンについて</h3>
-						<img src="images/engine.jpg" width="370" height="224" alt="検索エンジンの仕組み">
+						<img src="../images/engine.jpg" width="370" height="224" alt="検索エンジンの仕組み">
 						<p>SEOについて知るにあたって、私たちの目標を明確にするとクローラーと検索エンジンに対してわかりやすいプログラムを書くことです。そのためにこれらのプログラムについて深く知る必要があります。クローラーの役割は、世界中にあるwebページを巡回し新しい情報はないか確認し各ページのurlと全ての単語をまとめたデータをGoogleのデータセンターに登録することです。この時クローラーはページ上のリンクを辿って他のページの情報を集めるためSEO対策としてリンクについて考えることはとても大事です。リンクについての詳細はこの後すぐに説明します。検索エンジンの役割は、そのデータベースから検索ワードに合わせた適切なwebページをランキング付けして検索結果に羅列することです。このランキングシステムのおかげで私たちは、玉石混交の情報の海から適切なコンテンツを見つけることができる訳です。では適切なコンテンツとは、どのようなものなのでしょう。</p>
 					</div>
 				</div>
@@ -130,7 +173,7 @@
 					JSON-LDの特徴は、HTMLのpタグなどとは別にscriptタグの中に記述できることです。bodyタグ内に記述した内容が何を意味しているか
 					（メタデータ）を以下のようにして記述します。
 				</p>
-				<img src="images/json-ld.png" alt="JSON-LDのコード例">
+				<img src="../images/json-ld.png" alt="JSON-LDのコード例">
 				<p>
 					基本となる部分を説明します。JSON-LDでは、まず、&lt;script type="application/ld+jdon&gt;という部分でJSON-LDを
 					使用していることを明記し、記述した後に&lt;/script&gt;を記述します。次にJSON-オブジェクトというものを記述しますが、
@@ -196,6 +239,18 @@
 
 				</div>
 			</section>
+
+			<div class="nav-links">
+				<a class="prev page-numbers" href="deploy.html">«</a><!-- 現在の前のページへのリンク -->
+				<a class="page-numbers" href="deploy.html">1</a>
+				<span class="page-numbers current" href="seo.html">2</span>
+				<a class="page-numbers" href="marketing.html">3</a>
+				<a class="page-numbers" href="idea.html">4</a>
+				<a class="page-numbers" href="law.html">5</a>
+				<a class="page-numbers" href="history.html">6</a>
+				<a class="next page-numbers" href="marketing.html">»</a><!-- 現在の次のページへのリンク -->
+			  </div>
+
 
 
 		</div>
