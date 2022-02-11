@@ -83,7 +83,6 @@
       </div>
     </div>
 
-
     <div id="content">
 
       <section>
@@ -196,28 +195,22 @@
         <div class="innerS">
           <img src="../images/s31.jpg">
           <p>ヘッダーの「サービス」から「ストレージ」カテゴリーに「S3」が表示されているので、選択します。<br>※検索窓で「S3」と検索しても表示されます。</p>
-        </div>
-        <div class="innerS">
+
           <img src="../images/s32.png">
           <p>S3のコンソール画面には既に作成したバケットがある場合、一覧形式で表示されます。バケットとはこれからアップロードするHTMLファイルなどを保存していく場所(バケツ)のことです。新規でバケットを追加したい場合、「バケットを作成」ボタンをクリックします。</p>
-        </div>
-        <div class="innerS">
+
           <img src="../images/s33.png">
           <p>バケット名やリージョンを選択して、バケットを作成するわけですが、上述したようにバケット名は全ユーザーの保持するバケットで一意である必要があります。リージョンは、データを保管しておくサーバの場所のことです。</p>
-        </div>
-        <div class="innerS">
+
           <img src="../images/s34.png">
           <p>その他様々なオプション項目が設定可能ですが、今回はサンプルなのでデフォルトのまま画面下部の「バケットを作成」ボタンをクリックします。</p>
-        </div>
-        <div class="innerS">
+
           <img src="../images/s35.png">
           <p>サンプルの場合、「sample55555」というバケットを「ap-northeast-1(東京リージョン)」に作成出来たことが分かります。</p>
-        </div>
-        <div class="innerS">
+
           <img src="../images/s36.png">
           <p>作成した「sample55555」をクリックすると、上記の画面が表示されるので「アップロード」ボタンをクリックします。</p>
-        </div>
-        <div class="innerS">
+
           <img src="../images/s37.png">
           <p>「ファイルを追加」ボタンをクリックすると、ダイアログが表示されます。今回は以下のindex.htmlというファイルを選択します。</p>
           <pre class="prettyprint linenums">
@@ -236,57 +229,53 @@
         <div class="innerS">
           <img src="../images/s38.png">
           <p>選択できたら右下のアップロードを押してください。これでファイルのアップロードは完成したので次に公開の為の設定を少しだけします。</p>
-        </div>
 
-        <div class="innerS">
           <img src="../images/s39.png">
           <p>次に先ほどのバケットを選択したページに戻り「プロパティ」を選択します。</p>
-        </div>
-        <div class="innerS">
+
           <img src="../images/s310.png">
           <p>そのページの一番下の方にある「静的ウェブサイトホスティング」の編集をクリックします。</p>
-        </div>
-        <div class="innerS">
+
           <img src="../images/s311.png">
           <p>この設定することで、S3バケットに置いているHTMLを表示できるようになります。「インデックスドキュメント」について今回はトップページはindex.htmlなのでその名前を入力します。最後に一番下にある「変更の保存」をクリックします。</p>
-        </div>
 
-        <div class="innerS">
           <img src="../images/s312.png">
-          <p>次に先ほどのバケットを選択したページに戻り「アクセス許可」を選択します。</p>
+          <p>次に先ほどのバケットを選択したページに戻り「アクセス許可」を選択します。さらにその中のブロックパブリックアクセス(バケット設定)の編集を選択します。</p>
+
+          <img src="../images/s313.png">
+          <p>全てのブロックを解除し、変更の保存をクリックします。ブロックのアクセスと聞いて少し抵抗があると思いますが、このブロックを解除してもどこからでもアクセスできるわけはありません。簡単にこのブロックアクセスについて言うと、アクセスを許可することの許可という意味です。</p>
+
+          <img src="../images/s314.png">
+          <p>警告が出ますが気にせず確認を入力します。</p>
+
+          <img src="../images/s315.png">
+          <p>次にバケットポリシーの編集を選択します。以下をポリシーに入力してください。</p>
+          <pre class="prettyprint linenums">
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::【ここをバケット名に置換】/*"
+        }
+    ]
+}</pre>
         </div>
         <div class="innerS">
-          <img src="../images/s36.png">
-          <p>作成した「sample55555」をクリックすると、上記の画面が表示されるので「アップロード」ボタンをクリックします。</p>
-        </div>
-        <div class="innerS">
-          <img src="../images/s36.png">
-          <p></p>
-        </div>
+          <img src="../images/s316.png">
+          <p>このサンプルの場合上のようになります。入力が完了しら「変更の保存」をクリックしましょう。</p>
 
+          <img src="../images/s317.png">
+          <p>これでs3の設定は以上です。ブラウザで確認するために「URLをコピー」を選択してブラウザに表示してみましょう。</p>
+
+          <img src="../images/s318.png">
+          <p>うまくブラウザに表示できましたか？以上でインターネットへの公開の仕方は以上です。今回の方法は、単純なHTML,CSS,Javascriptファイルなどのサーバー内での処理を必要としない(静的Webサイト)をデプロイするためのシンプルな方法です。Webアプリケーションのような動的なWebページをデプロイするには、他の方法を使う必要があります。</p>
+        </div>
       </section>
 
-      <section id="sec04">
-        <header>
-          <h2><span>サンプル(こんなのもできるよ)</span></h2>
-        </header>
-        <div class="inner">
-          <ul class="col4">
-            <li>
-              <p class="img"><img src="../images/photo02.jpg" width="168" height="168" alt=""></p>
-              <p>画像の真下に表示される文章です</p>
-            </li>
-            <li>
-              <p class="img"><img src="../images/photo03.jpg" width="168" height="168" alt=""></p>
-              <p>たくさんは書けません</p>
-            </li>
-            <li>
-              <p class="img"><img src="../images/logo01.png" width="168" height="168" alt=""></p>
-              <p>リストは必要に応じて加えたり減らしたりしてください。</p>
-            </li>
-          </ul>
-        </div>
-      </section>
 
       <div class="nav-links">
         <span class="page-numbers current" href="deploy.html">1</span>
