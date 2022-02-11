@@ -5,15 +5,59 @@
   <meta name="description" content="layout">
   <meta name="viewport" content="width=device-width">
   <title>チュートリアル２</title>
-  <link rel="stylesheet" media="all" href="css/style.css">
-  <link href="code-prettify/prettify.css" type="text/css" rel="stylesheet">
-  <script type="text/javascript" src="code-prettify/prettify.js"></script>
+  <link rel="stylesheet" media="all" href="../css/style.css">
+  <link href="../code-prettify/prettify.css" type="text/css" rel="stylesheet">
+  <script type="text/javascript" src="../code-prettify/prettify.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-  <script src="js/script.js"></script>
+  <script src="../js/script.js"></script>
 </head>
 
 <body id="top" onload="prettyPrint()">
   <div id="wrapper">
+
+    <div class="header">
+      <div class="cp_navi">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li>
+            <a href="#">初心者編<span class="caret"></span></a>
+            <div>
+              <ul>
+                <li><a href="../level1/tutorial1.html">チュートリアル1</a></li>
+                <li><a href="../level1/tutorial2.html">チュートリアル2</a></li>
+                <li><a href="../level1/tutorial3.html">チュートリアル3</a></li>
+                <li><a href="../level1/css.html">CSSについて</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">中級者編<span class="caret"></span></a>
+            <div>
+              <ul>
+                <li><a href="../level2/design.html">デザインとは</a></li>
+                <li><a href="../level2/layout.html">レイアウト1</a></li>
+                <li><a href="../level2/layout2.html">レイアウト2</a></li>
+                <li><a href="../level2/layout3.html">レイアウト3</a></li>
+                <li><a href="../level2/responsive.html">レスポンシブ</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">上級者編<span class="caret"></span></a>
+            <div>
+              <ul>
+                <li><a href="../level3/deploy.html">デプロイ</a></li>
+                <li><a href="../level3/seo.html">SEO</a></li>
+                <li><a href="../level3/marketing.html">マーケティング</a></li>
+                <li><a href="../level3/idea.html">アイデア</a></li>
+                <li><a href="../level3/law.html">法律</a></li>
+                <li><a href="../level3/history.html">歴史</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
 
     <div id="sidebar">
       <div id="sidebarWrap">
@@ -27,8 +71,8 @@
               <li><a href="#sec03">Webページの仕組み</a></li>
             </ul>
             <ul id="sns">
-              <li><a href="https://twitter.com/m_seminar" target="_blank"><img src="images/iconTw.png" width="20" height="20" alt="twitter"></a></li>
-              <li><a href="https://t.co/PtGWqwsb5g" target="_blank"><img src="images/iconInsta.png" width="20" height="20" alt="Instagram"></a></li>
+              <li><a href="https://twitter.com/m_seminar" target="_blank"><img src="../images/iconTw.png" width="20" height="20" alt="twitter"></a></li>
+              <li><a href="https://t.co/PtGWqwsb5g" target="_blank"><img src="../images/iconInsta.png" width="20" height="20" alt="Instagram"></a></li>
             </ul>
           </div>
         </nav>
@@ -52,7 +96,7 @@
         </header>
         <div class="innerS">
           <p>Webサイトとは、複数のWebページをひとつの複合体として構成したものです。一般的に日本では、ホームページと呼ばれているものがWebサイトにあたるが、英語圏では「homepage」と「website」が明確に区別されており、「homepage」はあくまでも最初に表示されるページのことを指し、サイト全体を指すのは「website」とされています。</p>
-          <img src="images/website.png" alt="Webサイト">
+          <img src="../images/website.png" alt="Webサイト">
         </div>
 
       </section>
@@ -76,12 +120,12 @@
             <p>ドメインとは、<b>インターネットにおける「住所」のようなもの</b>で、主な役割は、WebサイトのURLとオリジナルのメールアドレスの2つになります。</p>
 
             <h4>【ドメインの前半部分】</h4>
-            <img src="images/domein.jpeg" width="800px" alt="">
+            <img src="../images/domein.jpeg" width="800px" alt="">
             <h1>URLの場合</h1>
             <p>Webサイトを公開する際に、URL（住所）が必要となり、この住所を設定するために、ドメインが必要となります。</p>
             <h1>メールアドレスの場合</h1>
             <p>@マーク前は、自由な文字列を設定することができ、1つのドメインで複数のメールアドレスを設定することが可能となっています。</p>
-            <img src="images/domein2.jpeg" alt="">
+            <img src="../images/domein2.jpeg" alt="">
             <p>ドメインの前半部分は好きな文字列を付けることができます。また、最近では「日本語ドメイン」と呼ばれる、全角ひらがな・カタカナ・漢字などを使用することも可能となっています。</p><br>
 
             <h4>【ドメインの後半部分】</h4>
@@ -90,7 +134,7 @@
             <p>ドメインの種類は、住んでいる国や地域に関係なく取得できるドメインと国や地域ごとに割り当てられ、基本的にその国や地域に在住する個人のみが取得できるドメインの2種類があります。</p>
             <h1>分野別トップレベルドメイン（gTLD)</h1>
             <p>分野別トップレベルドメイン（gTLD）は住んでいる場所（国・地域）に関係なく取得できるドメインです。種類によって、サービスや団体などを表しますが、必ずしもその種類を選択しなければならないという決まりはありません。</p>
-            <img src="images/document.png" width="680px" alt="ドキュメント">
+            <img src="../images/document.png" width="680px" alt="ドキュメント">
             <h1>国コードトップレベルドメイン（ccTLD）</h1>
             <p>国コードトップレベルドメインは、国や地域ごとに割り当てられており、原則的にその国・地域に存在する個人（組織）でないと取得する事が出来ません。アメリカであれば「.us」日本であれば「.jp」が該当します。</p>
             <p style="color: blue;"><b>【汎用JPドメイン名】</b></p>
@@ -98,7 +142,7 @@
             <p style="color: blue;"><b>【属性型JPドメイン名】</b></p>
             <p>「.jp」ドメインの中には、「.jp」の前に決められた文字列がいる属性型JPドメインと呼ばれるものがあります。( 例:「.co.jp」、「.ne.jp」など)</p><br>
             <p>属性型JPドメイン名は、文字列により取得できる組織が限定されているのが特徴です。また、ネットワークサービス用のドメインである「.ne.jp」を除き、1組織に1つしか取得する事が出来ません。</p>
-            <img src="images/document2.png" width="680px" alt="ドキュメント2">
+            <img src="../images/document2.png" width="680px" alt="ドキュメント2">
 
 
 
@@ -106,7 +150,7 @@
             <p>ドメインが住所のようなものに対して、<b>サーバーはWebサイトを保管しておく家のようなもの</b>になります。そして、取得したドメイン（住所）をサーバー（家）に紐づけることによって、その URL（ドメイン）にアクセスしたユーザーはサーバーにある、Webサイトを見ることができます。</p>
             <h4>サーバーの種類</h4>
             <p>サーバーには、<b>共用サーバー</b>と<b>専用サーバー</b>の2種類があります。<br></p>
-            <img src="images/server.png" alt="サーバー">
+            <img src="../images/server.png" alt="サーバー">
             <p>共有サーバーは、マンションの一室を利用するイメージとなっています。複数のユーザーでサーバーを利用するため、同じサーバー内の別のサイトにアクセスが集中すると、他のサイトの表示が重くなってしまう可能性があるため、共有サーバーにはある程度の制限が設けられています。さらに、スペックや機能なども、自由にカスタマイズすることが出来ず、サーバー会社やサーバー会社のプランの中から必要な上演にあったものを選択する必要があります。
             </p>
             <p>一方で専用サーバーは、1つのサーバーを1人のユーザーで独占して利用することが可能となっています。また、1つのサーバーを1人で使えるため、他サイトに影響を受けることなく、自由にカスタマイズすることが可能となっているが、その分費用面も共有サーバーに比べて高くなっています。</p><br>
@@ -131,6 +175,16 @@
           <p>JavaScriptとは、HTMLファイルに埋め込み可能なスクリプト言語で、Webサーバーと通信しなくても、ユーザ操作などによって文字の背景を変えたり、Webページを切り替えたりできます。</p>
         </div>
       </section>
+
+      <div class="nav-links">
+        <a class="prev page-numbers" href="tutorial1.html">«</a><!-- 現在の前のページへのリンク -->
+        <a class="page-numbers" href="tutorial1.html">1</a>
+        <span class="page-numbers current" href="tutorial2.html">2</span>
+        <a class="page-numbers" href="tutorial3.html">3</a>
+        <a class="page-numbers" href="css.html">4</a>
+        <a class="next page-numbers" href="tutorial3.html">»</a><!-- 現在の次のページへのリンク -->
+      </div>
+
 
 
     </div>

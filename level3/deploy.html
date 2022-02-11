@@ -5,128 +5,59 @@
   <meta name="description" content="layout">
   <meta name="viewport" content="width=device-width">
   <title>インターネットへの公開(デプロイ)</title>
-  <link rel="stylesheet" media="all" href="css/style.css">
-  <link href="code-prettify/prettify.css" type="text/css" rel="stylesheet">
-  <script type="text/javascript" src="code-prettify/prettify.js"></script>
+  <link rel="stylesheet" media="all" href="../css/style.css">
+  <link href="../code-prettify/prettify.css" type="text/css" rel="stylesheet">
+  <script type="text/javascript" src="../code-prettify/prettify.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-  <script src="js/script.js"></script>
+  <script src="../js/script.js"></script>
 </head>
-
-<!--
-	gitの使い方：
-  https://gitforwindows.org から install
-  (Windowsの人は)git CMD を開く
-	git config --global user.name "ユーザーネーム"
-	git config --global user.email メールアドレス
-	//上の二つはしてない人だけで良いです。
-  空のフォルダーに移動する。
-  git init
-	git clone https://github.com/Siro3150/How_To.git
-	git branch ブランチ名
-	git checkout ブランチ名
-	編集作業
-	git add .
-	git commit -m 'コメントを書く'
-	git push -u origin ブランチ名
-  not upstream が出た時
-  git pull origin
-  git push -u origin ブランチ名
-
-  origin = https://github.com/Siro3150/How_To.git の意味なので２回めからは,
-  省略してoriginと書くことができると思いますが、もしエラーが出た場合は,
-  ちゃんとurlを書いてください。
-
-
-	２回め以降の編集作業
-	git pull https://github.com/Siro3150/How_To.git
-		編集作業
-	git add .
-	git commit -m 'コメントを書く'
-	git push -u origin ブランチ名
-
-	テンプレートの説明：
-	(新しくページを作る時)
-	①ファイル名は小文字英語でメインコンテンツ名.htmlとすること。(seo.html) ファイル位置はとりあえずseo.htmlと同じ階層で。
-	②<meta content="">にファイル名と同じようにメインコンテンツ名を記述する。(例：seo)
-	③良い感じのを<title></title>に書く(例：SEO)
-
-	(コンテンツを追加する時)
-	④サイドバーのリストにコンテンツの名前とhrefにsection番号を新たに加える。(例：sec09)
-	⑤<div id="content"></div>内に以下のプログラムを加えてコンテンを記述。<section id="">に先ほどのリストに書いたsection番号を書く。
-
-			<section id="secXX">
-				<header>
-					<h2><span>コンテンツ名</span></h2>
-				</header>
-				<div class="innerS">
-					<p>導入や思想、そのコンテンツがどのように役に立つかなど(できれば書いて欲しい)</p>
-					<h3>サブタイトル(なくても良い)</h3>
-					<p>説明</p>
-				</div>
-			</section>
-
-	⑥画像を用いて文章を説明したい時、⑤と同様に以下のプログラムを加える。(注：画像リンクはなるべくimagaesフォルダーにまとめること)
-
-
-			<section id="secXX">
-				<header>
-					<h2><span>コンテンツ名</span></h2>
-				</header>
-					<div class="inner">
-						<div class="article">
-							<img src="画像urlを記入" width="370" height="224" alt="">
-							<p>画像の右に表示される</p>
-							<p>画像右下あたりに表示される</p>
-						</div>
-						<div class="article">
-							<img src="画像urlを記入" width="370" height="224" alt="">
-							<p>＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃</p>
-						</div>
-					</div>
-			</section>
-
-
-	⑦画像を横並びに置いてその下に文章を書く場合、⑤と同様に以下のプログラムをコピペする。
-
-
-			<section id="secXX">
-				<header>
-					<h2><span>コンテンツ名</span></h2>
-				</header>
-				<div class="inner">
-					<ul class="col4">
-						<li>
-							<p class="img"><img src="url" width="168" height="168" alt=""></p>
-							<p>画像の真下に表示される文章です</p>
-						</li>
-						<li>
-							<p class="img"><img src="url" width="168" height="168" alt=""></p>
-							<p>たくさんは書けません</p>
-						</li>
-						<li>
-							<p class="img"><img src="url" width="168" height="168" alt=""></p>
-							<p>リストは必要に応じて加えたり減らしたりしてください。</p>
-						</li>
-					</ul>
-				</div>
-			</section>
-
-  ⑧ソースコードを埋め込みたい時
-
-    <pre class="prettyprint linenums">
-      ソースコード
-    </pre>
-
-もっと詳しい説明：
-・全体を大きくheader、content、footerに分かれておりcontentはさらにsectionごとに区切られている。
-・サイドナビゲーションのリンク先をsectionのidに指定することでページ内遷移をしている。
-・<div class="inner">と<div class="innerS">の違いは、innerの方が画像を含めた記事を載せるため横幅が広い。innerSの方は文章のみの説明となるので横幅が狭め
-・cssとjavascriptファイルはあまり気にしなくて良い。
-・後は自由に使いたいとこをコピペしたり、無駄なとこを消したりして使ってください。
- -->
 
 <body id="top" onload="prettyPrint()">
   <div id="wrapper">
+
+    <div class="header">
+      <div class="cp_navi">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li>
+            <a href="#">初心者編<span class="caret"></span></a>
+            <div>
+              <ul>
+                <li><a href="../level1/tutorial1.html">チュートリアル1</a></li>
+                <li><a href="../level1/tutorial2.html">チュートリアル2</a></li>
+                <li><a href="../level1/tutorial3.html">チュートリアル3</a></li>
+                <li><a href="../level1/css.html">CSSについて</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">中級者編<span class="caret"></span></a>
+            <div>
+              <ul>
+                <li><a href="../level2/design.html">デザインとは</a></li>
+                <li><a href="../level2/layout.html">レイアウト1</a></li>
+                <li><a href="../level2/layout2.html">レイアウト2</a></li>
+                <li><a href="../level2/layout3.html">レイアウト3</a></li>
+                <li><a href="../level2/responsive.html">レスポンシブ</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">上級者編<span class="caret"></span></a>
+            <div>
+              <ul>
+                <li><a href="../level3/deploy.html">デプロイ</a></li>
+                <li><a href="../level3/seo.html">SEO</a></li>
+                <li><a href="../level3/marketing.html">マーケティング</a></li>
+                <li><a href="../level3/idea.html">アイデア</a></li>
+                <li><a href="../level3/law.html">法律</a></li>
+                <li><a href="../level3/history.html">歴史</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
 
     <div id="sidebar">
       <div id="sidebarWrap">
@@ -144,8 +75,8 @@
               <li><a href="#sec06">サンプル</a></li>
             </ul>
             <ul id="sns">
-              <li><a href="https://twitter.com/m_seminar" target="_blank"><img src="images/iconTw.png" width="20" height="20" alt="twitter"></a></li>
-              <li><a href="https://t.co/PtGWqwsb5g" target="_blank"><img src="images/iconInsta.png" width="20" height="20" alt="Instagram"></a></li>
+              <li><a href="https://twitter.com/m_seminar" target="_blank"><img src="../images/iconTw.png" width="20" height="20" alt="twitter"></a></li>
+              <li><a href="https://t.co/PtGWqwsb5g" target="_blank"><img src="../images/iconInsta.png" width="20" height="20" alt="Instagram"></a></li>
             </ul>
           </div>
         </nav>
@@ -189,7 +120,7 @@
         <div class="inner">
           <h3>ステップ 1: AWS アカウントの作成</h3>
           <div class="article">
-            <img src="images/aws1.jpg" width="370" height="224">
+            <img src="../images/aws1.jpg" width="370" height="224">
             <ol>
               <li><a href="https://portal.aws.amazon.com/billing/signup#/start" target="_blank">awsのサインアップページ</a>に移動</li>
               <li>表示されたページが「日本語」でない場合、ページ右上の言語選択ボックスより「日本語」を選択後、サインアップ画面へお進みください。</li>
@@ -201,7 +132,7 @@
 
           <h3>ステップ 2: 連絡先情報の入力</h3>
           <div class="article">
-            <img src="images/aws2.jpg" width="370" height="224">
+            <img src="../images/aws2.jpg" width="370" height="224">
             <ol>
               <li>個人の使用であれば「個人 - ご自身のプロジェクト向け」を選択します。</li>
               <li>連絡先情報は、すべて「半角アルファベットおよび半角数字」 で入力します。</li>
@@ -221,7 +152,7 @@
 
           <h3>ステップ 3: 請求情報の入力</h3>
           <div class="article">
-            <img src="images/aws3.jpg" width="370" height="224">
+            <img src="../images/aws3.jpg" width="370" height="224">
             <ol>
               <li>AWS 無料利用枠内の利用に対し、料金は発生しません。</li>
               <li>有効なクレジットカードまたはデビットカード情報を入力します。カード番号、有効期限などの情報に間違いのないようお気をつけください。</li>
@@ -233,7 +164,7 @@
 
           <h3>ステップ 4: SMS または音声電話による本人確認</h3>
           <div class="article">
-            <img src="images/aws4.jpg" width="370" height="2">
+            <img src="../images/aws4.jpg" width="370" height="2">
             <ol>
               <li>① で検証コードの受け取り方法を選択します。</li>
               <li>国コードで、国を選択し、電話番号を ②にハイフン・記号なしで入力します。（例：09012345678）</li>
@@ -241,12 +172,12 @@
               <li>入力が完了したら、SNS の場合「SNS を送信する」、音声通話の場合「今すぐ呼び出し」ボタンをクリックします。</li>
               <li>SMS または電話（日本語自動音声）で 4 桁の 検証コードが届きます。検証コードが届いたら入力欄に検証コードを入力し、「続行」ボタンをクリックします。</li>
             </ol>
-            <img src="images/aws5.jpg" width="370" height="224">
+            <img src="../images/aws5.jpg" width="370" height="224">
           </div>
 
           <h3>ステップ 5: AWS サポートプランの選択</h3>
           <div class="article">
-            <img src="images/aws6.jpg" width="370" height="224">
+            <img src="../images/aws6.jpg" width="370" height="224">
             <ol>
               <li>今回はS3を使うだけなので「ベーシックサポート」を選択します。</li>
               <li>選択が完了したら、「サインアップを完了」ボタンをクリックします。</li>
@@ -263,31 +194,31 @@
           <h2><span>S3を用いてデプロイする。</span></h2>
         </header>
         <div class="innerS">
-          <img src="images/s31.jpg">
+          <img src="../images/s31.jpg">
           <p>ヘッダーの「サービス」から「ストレージ」カテゴリーに「S3」が表示されているので、選択します。<br>※検索窓で「S3」と検索しても表示されます。</p>
         </div>
         <div class="innerS">
-          <img src="images/s32.png">
+          <img src="../images/s32.png">
           <p>S3のコンソール画面には既に作成したバケットがある場合、一覧形式で表示されます。バケットとはこれからアップロードするHTMLファイルなどを保存していく場所(バケツ)のことです。新規でバケットを追加したい場合、「バケットを作成」ボタンをクリックします。</p>
         </div>
         <div class="innerS">
-          <img src="images/s33.png">
+          <img src="../images/s33.png">
           <p>バケット名やリージョンを選択して、バケットを作成するわけですが、上述したようにバケット名は全ユーザーの保持するバケットで一意である必要があります。リージョンは、データを保管しておくサーバの場所のことです。</p>
         </div>
         <div class="innerS">
-          <img src="images/s34.png">
+          <img src="../images/s34.png">
           <p>その他様々なオプション項目が設定可能ですが、今回はサンプルなのでデフォルトのまま画面下部の「バケットを作成」ボタンをクリックします。</p>
         </div>
         <div class="innerS">
-          <img src="images/s35.png">
+          <img src="../images/s35.png">
           <p>サンプルの場合、「sample55555」というバケットを「ap-northeast-1(東京リージョン)」に作成出来たことが分かります。</p>
         </div>
         <div class="innerS">
-          <img src="images/s36.png">
+          <img src="../images/s36.png">
           <p>作成した「sample55555」をクリックすると、上記の画面が表示されるので「アップロード」ボタンをクリックします。</p>
         </div>
         <div class="innerS">
-          <img src="images/s37.png">
+          <img src="../images/s37.png">
           <p>「ファイルを追加」ボタンをクリックすると、ダイアログが表示されます。今回は以下のindex.htmlというファイルを選択します。</p>
           <pre class="prettyprint linenums">
 &lt;!DOCTYPE html&gt;
@@ -303,33 +234,33 @@
 &lt;/html&gt;</pre>
         </div>
         <div class="innerS">
-          <img src="images/s38.png">
+          <img src="../images/s38.png">
           <p>選択できたら右下のアップロードを押してください。これでファイルのアップロードは完成したので次に公開の為の設定を少しだけします。</p>
         </div>
 
         <div class="innerS">
-          <img src="images/s39.png">
+          <img src="../images/s39.png">
           <p>次に先ほどのバケットを選択したページに戻り「プロパティ」を選択します。</p>
         </div>
         <div class="innerS">
-          <img src="images/s310.png">
+          <img src="../images/s310.png">
           <p>そのページの一番下の方にある「静的ウェブサイトホスティング」の編集をクリックします。</p>
         </div>
         <div class="innerS">
-          <img src="images/s311.png">
+          <img src="../images/s311.png">
           <p>この設定することで、S3バケットに置いているHTMLを表示できるようになります。「インデックスドキュメント」について今回はトップページはindex.htmlなのでその名前を入力します。最後に一番下にある「変更の保存」をクリックします。</p>
         </div>
 
         <div class="innerS">
-          <img src="images/s312.png">
+          <img src="../images/s312.png">
           <p>次に先ほどのバケットを選択したページに戻り「アクセス許可」を選択します。</p>
         </div>
         <div class="innerS">
-          <img src="images/s36.png">
+          <img src="../images/s36.png">
           <p>作成した「sample55555」をクリックすると、上記の画面が表示されるので「アップロード」ボタンをクリックします。</p>
         </div>
         <div class="innerS">
-          <img src="images/s36.png">
+          <img src="../images/s36.png">
           <p></p>
         </div>
 
@@ -342,20 +273,31 @@
         <div class="inner">
           <ul class="col4">
             <li>
-              <p class="img"><img src="images/photo02.jpg" width="168" height="168" alt=""></p>
+              <p class="img"><img src="../images/photo02.jpg" width="168" height="168" alt=""></p>
               <p>画像の真下に表示される文章です</p>
             </li>
             <li>
-              <p class="img"><img src="images/photo03.jpg" width="168" height="168" alt=""></p>
+              <p class="img"><img src="../images/photo03.jpg" width="168" height="168" alt=""></p>
               <p>たくさんは書けません</p>
             </li>
             <li>
-              <p class="img"><img src="images/logo01.png" width="168" height="168" alt=""></p>
+              <p class="img"><img src="../images/logo01.png" width="168" height="168" alt=""></p>
               <p>リストは必要に応じて加えたり減らしたりしてください。</p>
             </li>
           </ul>
         </div>
       </section>
+
+      <div class="nav-links">
+        <span class="page-numbers current" href="deploy.html">1</span>
+        <a class="page-numbers" href="seo.html">2</a>
+        <a class="page-numbers" href="marketing.html">3</a>
+        <a class="page-numbers" href="idea.html">4</a>
+        <a class="page-numbers" href="law.html">5</a>
+        <a class="page-numbers" href="history.html">6</a>
+        <a class="next page-numbers" href="seo.html">»</a><!-- 現在の次のページへのリンク -->
+      </div>
+
 
     </div>
   </div>

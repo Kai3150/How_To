@@ -5,11 +5,11 @@
   <meta name="description" content="layout">
   <meta name="viewport" content="width=device-width">
   <title>テンプレート</title>
-  <link rel="stylesheet" media="all" href="css/style.css">
-  <link href="code-prettify/prettify.css" type="text/css" rel="stylesheet">
-  <script type="text/javascript" src="code-prettify/prettify.js"></script>
+  <link rel="stylesheet" media="all" href="../css/style.css">
+  <link href="../code-prettify/prettify.css" type="text/css" rel="stylesheet">
+  <script type="text/javascript" src="../code-prettify/prettify.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-  <script src="js/script.js"></script>
+  <script src="../js/script.js"></script>
 </head>
 
 <!--
@@ -128,6 +128,50 @@
 <body id="top" onload="prettyPrint()">
   <div id="wrapper">
 
+    <div class="header">
+      <div class="cp_navi">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li>
+            <a href="#">初心者編<span class="caret"></span></a>
+            <div>
+              <ul>
+                <li><a href="../level1/tutorial1.html">チュートリアル1</a></li>
+                <li><a href="../level1/tutorial2.html">チュートリアル2</a></li>
+                <li><a href="../level1/tutorial3.html">チュートリアル3</a></li>
+                <li><a href="../level1/css.html">CSSについて</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">中級者編<span class="caret"></span></a>
+            <div>
+              <ul>
+                <li><a href="../level2/design.html">デザインとは</a></li>
+                <li><a href="../level2/layout.html">レイアウト1</a></li>
+                <li><a href="../level2/layout2.html">レイアウト2</a></li>
+                <li><a href="../level2/layout3.html">レイアウト3</a></li>
+                <li><a href="../level2/responsive.html">レスポンシブ</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">上級者編<span class="caret"></span></a>
+            <div>
+              <ul>
+                <li><a href="../level3/deploy.html">デプロイ</a></li>
+                <li><a href="../level3/seo.html">SEO</a></li>
+                <li><a href="../level3/marketing.html">マーケティング</a></li>
+                <li><a href="../level3/idea.html">アイデア</a></li>
+                <li><a href="../level3/law.html">法律</a></li>
+                <li><a href="../level3/history.html">歴史</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <div id="sidebar">
       <div id="sidebarWrap">
 
@@ -144,8 +188,8 @@
               <li><a href="#sec06">サンプル</a></li>
             </ul>
             <ul id="sns">
-              <li><a href="https://twitter.com/m_seminar" target="_blank"><img src="images/iconTw.png" width="20" height="20" alt="twitter"></a></li>
-              <li><a href="https://t.co/PtGWqwsb5g" target="_blank"><img src="images/iconInsta.png" width="20" height="20" alt="Instagram"></a></li>
+              <li><a href="https://twitter.com/m_seminar" target="_blank"><img src="../images/iconTw.png" width="20" height="20" alt="twitter"></a></li>
+              <li><a href="https://t.co/PtGWqwsb5g" target="_blank"><img src="../images/iconInsta.png" width="20" height="20" alt="Instagram"></a></li>
             </ul>
           </div>
         </nav>
@@ -166,11 +210,11 @@
 					<ul class="col7">
 						<li>
 							<p><b>HTMLだけの場合</b></p>
-							<p class="img"><img src="images\gomihtml.png" width="300" height="200" alt=""></p>
+							<p class="img"><img src="../images\gomihtml.png" width="300" height="200" alt=""></p>
 						</li>
 						<li>
 							<p><b>CSSも加えた場合</b></p>
-							<p class="img"><img src="images/gomicss.png" width="300" height="200" alt=""></p>
+							<p class="img"><img src="../images/gomicss.png" width="300" height="200" alt=""></p>
 						</li>
 					</ul>
 					<div class="inner">
@@ -217,7 +261,7 @@
         <div class="innerS">
           <h3>ここでは最もポピュラーな外部ファイルを参照した方法でのCSSの書き方を紹介していきます。</h3>
           <p>
-            
+
           </p>
         </div>
       </section>
@@ -229,12 +273,12 @@
         </header>
         <div class="inner">
           <div class="article">
-            <img src="images/photo02.jpg" width="370" height="224" alt="">
+            <img src="../images/photo02.jpg" width="370" height="224" alt="">
             <p>画像の右に表示される</p>
             <p>画像右下あたりに表示される</p>
           </div>
           <div class="article">
-            <img src="images/photo02.jpg" width="370" height="224" alt="">
+            <img src="../images/photo02.jpg" width="370" height="224" alt="">
             <p>class="inner"の中に書く場合はこのように新聞記事のように文章に画像を埋め込むときに有効です。＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃</p>
           </div>
         </div>
@@ -247,20 +291,29 @@
         <div class="inner">
           <ul class="col4">
             <li>
-              <p class="img"><img src="images/photo02.jpg" width="168" height="168" alt=""></p>
+              <p class="img"><img src="../images/photo02.jpg" width="168" height="168" alt=""></p>
               <p>画像の真下に表示される文章です</p>
             </li>
             <li>
-              <p class="img"><img src="images/photo03.jpg" width="168" height="168" alt=""></p>
+              <p class="img"><img src="../images/photo03.jpg" width="168" height="168" alt=""></p>
               <p>たくさんは書けません</p>
             </li>
             <li>
-              <p class="img"><img src="images/logo01.png" width="168" height="168" alt=""></p>
+              <p class="img"><img src="../images/logo01.png" width="168" height="168" alt=""></p>
               <p>リストは必要に応じて加えたり減らしたりしてください。</p>
             </li>
           </ul>
         </div>
       </section>
+
+      <div class="nav-links">
+        <a class="prev page-numbers" href="tutorial3.html">«</a><!-- 現在の前のページへのリンク -->
+        <a class="page-numbers" href="tutorial1.html">1</a>
+        <a class="page-numbers" href="tutorial2.html">2</a>
+        <a class="page-numbers" href="tutorial3.html">3</a>
+        <span class="page-numbers current" href="css.html">4</span>
+      </div>
+
 
     </div>
   </div>
