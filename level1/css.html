@@ -4,12 +4,26 @@
   <meta charset="UTF-8">
   <meta name="description" content="layout">
   <meta name="viewport" content="width=device-width">
-  <title>テンプレート</title>
+  <style type="text/css">
+    .midashi{
+      background-color: orange;
+      text-align: center;
+    }
+    .hyou{
+      background-color: navajowhite;
+      text-align: left;
+    }
+    table{
+      margin: 0 auto 0 auto;
+    }
+  </style>
+  <title>CSSについて</title>
   <link rel="stylesheet" media="all" href="../css/style.css">
   <link href="../code-prettify/prettify.css" type="text/css" rel="stylesheet">
   <script type="text/javascript" src="../code-prettify/prettify.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
   <script src="../js/script.js"></script>
+
 </head>
 
 <!--
@@ -180,12 +194,10 @@
           <div class="panel">
             <ul>
               <li><a href="#top">top</a></li>
-              <li><a href="#sec01">リンク</a></li>
-              <li><a href="#sec02">構造化データ</a></li>
-              <li><a href="#sec03">リッチスニペット</a></li>
-              <li><a href="#sec04">コンテンツの属性</a></li>
-              <li><a href="#sec05">ナレッジグラフ</a></li>
-              <li><a href="#sec06">サンプル</a></li>
+              <li><a href="#sec01">CSS</a></li>
+              <li><a href="#sec02">CSSの適用方法</a></li>
+              <li><a href="#sec03">要素の指定</a></li>
+              <li><a href="#sec04">実際の書き方</a></li>
             </ul>
             <ul id="sns">
               <li><a href="https://twitter.com/m_seminar" target="_blank"><img src="../images/iconTw.png" width="20" height="20" alt="twitter"></a></li>
@@ -235,19 +247,48 @@
           <p>
            styleタグはCSSを記述するためのHTMLのタグです
            <br>headタグにいれて、適応するCSSを書いていくのが基本となります。
-           コード入れたい
           </p>
+          <pre class="prettyprint linenums">
+            &lt;!DOCTYPE HTML&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+            &lt;title&gt;&lt;/title&gt;
+            &lt;style type=&quot;text/css&quot;&gt;
+            body{
+            background-color:red;
+            }
+            &lt;/style&gt;
+            
+          </pre>
           <p style="color: red;">この方法ではHTMLとCSSが一つのファイルで管理できるため、小規模開発であれば見やすくてよいですね。</p>
           <h3>style属性を用いる方法</h3>
           <p>style属性は属性のため他のタグの属性として機能します。
-          <br>んでコード入れたい    </p>
+          <br><pre class="prettyprint linenums">
+            &lt;body style=&quot;background-color: red;&quot;&gt;
+          </pre>  </p>
           <p style="color: red;">この方法では、のちに説明するclassなどをつける必要がないので楽です。
           しかし、同じ要素には毎回styleを書かなければならないので、基本的に一部だけの修正などに活躍します。
+          </p>
+          <p>※属性とは、HTMLの要素に何かしらの設定をつけるもののようなイメージです。
+           <br> <要素名 属性="属性名">
           </p>
            <h3>外部ファイルを参照する方法</h3>
            <p>headタグの中に他のCSSファイルを参照するようなコードを書いて、CSSはもう一つのファイルに書き込むという方法です。
            <br>classなどの属性で指定して、CSSファイルにその内容を記述していきます。
-           またまたコード入れたい</p>
+           <pre class="prettyprint linenums">
+            &lt;!DOCTYPE HTML&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+            &lt;title&gt;&lt;/title&gt;
+            &lt;link rel=&quot;stylesheet&quot; href=&quot;ファイル名.css&quot;&gt;
+            もしくは
+            &lt;!DOCTYPE HTML&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+            &lt;style type=&quot;text/css&quot;&gt;
+            @import url(&quot;ファイル名.css&quot;)
+          </pre></p>
+          <p>ファイル名.cssに書かれたCSSがHTMLに反映されます。</p>
            <p style="color: red;">この方法が最もポピュラーで大規模な開発にも役立ちます。
           しかし、HTMLファイルとCSSファイルの二つのファイルが必要となります。</p>
 
@@ -256,53 +297,47 @@
 
       <section id="sec03">
         <header>
-          <h2><span>実際の書き方</span></h2>
+          <h2><span>要素の指定</span></h2>
         </header>
         <div class="innerS">
-          <h3>ここでは最もポピュラーな外部ファイルを参照した方法でのCSSの書き方を紹介していきます。</h3>
+          <h4>ここでは最もポピュラーな外部ファイルを参照した方法でのCSSの書き方を紹介していきます。</h4>
           <p>
+           上で説明したような記述をheadタグにして、CSSファイルに内容を書き込んでいきます。
+           <br>まずは属性により要素の指定を行います。その属性の中でも重要なものにid属性とclass属性があります。
+          </p>
+          <h4>id属性</h4>
+          <p>id属性は要素に識別子を指定します。この属性は1つのドキュメントの中に同じ名前のidを指定することはできません。</p>
+          <h4>class属性</h4>
+          <p>class属性は要素にクラス名を指定します。こちらは1つのドキュメント内に同一のクラスを複数指定することができます。</p>
+          <pre class="prettyprint linenums">
+            &lt;h1 id=&quot;midashi&quot;&gt;/id指定の場合
+            &lt;h1 class=&quot;midashi&quot;&gt;/class指定の場合
+          </pre>
+          <p>これらを用いて要素を指定して、CSSを反映します。
+
 
           </p>
         </div>
       </section>
 
 
-      <section id="sec03">
-        <header>
-          <h2><span>コンテンツ名</span></h2>
-        </header>
-        <div class="inner">
-          <div class="article">
-            <img src="../images/photo02.jpg" width="370" height="224" alt="">
-            <p>画像の右に表示される</p>
-            <p>画像右下あたりに表示される</p>
-          </div>
-          <div class="article">
-            <img src="../images/photo02.jpg" width="370" height="224" alt="">
-            <p>class="inner"の中に書く場合はこのように新聞記事のように文章に画像を埋め込むときに有効です。＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃</p>
-          </div>
-        </div>
-      </section>
-
       <section id="sec04">
         <header>
-          <h2><span>サンプル(こんなのもできるよ)</span></h2>
+          <h2><span>CSSの記述方法</span></h2>
         </header>
-        <div class="inner">
-          <ul class="col4">
-            <li>
-              <p class="img"><img src="../images/photo02.jpg" width="168" height="168" alt=""></p>
-              <p>画像の真下に表示される文章です</p>
-            </li>
-            <li>
-              <p class="img"><img src="../images/photo03.jpg" width="168" height="168" alt=""></p>
-              <p>たくさんは書けません</p>
-            </li>
-            <li>
-              <p class="img"><img src="../images/logo01.png" width="168" height="168" alt=""></p>
-              <p>リストは必要に応じて加えたり減らしたりしてください。</p>
-            </li>
-          </ul>
+        <div class="innerS">
+          <table border="1" cellpadding="2">
+            <tr class="midashi"><th>方法</th><th>書式</th><th>記述例</th></tr>
+            <tr class="hyou"><td>タグで指定</td><td>タグ名{css}</td><td>div{font-size:large;}</td></tr>
+            <tr class="hyou"><td>タグとクラスで指定</td><td>タグ名.クラス名{css}</td><td>div.group{background-color:red;}</td></tr>
+            <tr class="hyou"><td>クラス名で指定</td><td>.クラス名{css}</td><td>.group{text-align:center;}</td></tr>
+            <tr class="hyou"><td>idで指定</td><td>#id名{css}</td><td>#group{color:blue;}</td></tr>
+            <tr class="hyou"><td>複数の要素に適用</td><td>タグ名1,タグ名2{css}</td><td>h1,div{text-align:right;}</td></tr>
+            <tr class="hyou"><td>全ての要素に適用</td><td>*{css}</td><td>*{background-color:red;}</td></tr>
+          </table>
+          <p>上の表のような記述方法があります。</p>
+          <p>color、text-align等のことをプロパティといい、プロパティとその値で指定された要素を変更します。</p>
+          </div>
         </div>
       </section>
 
