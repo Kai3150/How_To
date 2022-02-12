@@ -5,15 +5,58 @@
   <meta name="description" content="layout">
   <meta name="viewport" content="width=device-width">
   <title>レイアウト</title>
-  <link rel="stylesheet" media="all" href="css/style.css">
-  <link href="code-prettify/prettify.css" type="text/css" rel="stylesheet">
-  <script type="text/javascript" src="code-prettify/prettify.js"></script>
+  <link rel="stylesheet" media="all" href="../css/style.css">
+  <link href="../code-prettify/prettify.css" type="text/css" rel="stylesheet">
+  <script type="text/javascript" src="../code-prettify/prettify.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-  <script src="js/script.js"></script>
+  <script src="../js/script.js"></script>
 </head>
 
 <body id="top" onload="prettyPrint()">
   <div id="wrapper">
+    <div class="header">
+      <div class="cp_navi">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li>
+            <a href="#">初心者編<span class="caret"></span></a>
+            <div>
+              <ul>
+                <li><a href="../level1/tutorial1.html">チュートリアル1</a></li>
+                <li><a href="../level1/tutorial2.html">チュートリアル2</a></li>
+                <li><a href="../level1/tutorial3.html">チュートリアル3</a></li>
+                <li><a href="../level1/css.html">CSSについて</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">中級者編<span class="caret"></span></a>
+            <div>
+              <ul>
+                <li><a href="../level2/design.html">デザインとは</a></li>
+                <li><a href="../level2/layout.html">レイアウト1</a></li>
+                <li><a href="../level2/layout2.html">レイアウト2</a></li>
+                <li><a href="../level2/layout3.html">レイアウト3</a></li>
+                <li><a href="../level2/responsive.html">レスポンシブ</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">上級者編<span class="caret"></span></a>
+            <div>
+              <ul>
+                <li><a href="../level3/deploy.html">デプロイ</a></li>
+                <li><a href="../level3/seo.html">SEO</a></li>
+                <li><a href="../level3/marketing.html">マーケティング</a></li>
+                <li><a href="../level3/idea.html">アイデア</a></li>
+                <li><a href="../level3/law.html">法律</a></li>
+                <li><a href="../level3/history.html">歴史</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
 
     <div id="sidebar">
       <div id="sidebarWrap">
@@ -29,8 +72,8 @@
               <li><a href="#sec04">コントラスト</a></li>
             </ul>
             <ul id="sns">
-              <li><a href="https://twitter.com/m_seminar" target="_blank"><img src="images/iconTw.png" width="20" height="20" alt="twitter"></a></li>
-              <li><a href="https://t.co/PtGWqwsb5g" target="_blank"><img src="images/iconInsta.png" width="20" height="20" alt="Instagram"></a></li>
+              <li><a href="https://twitter.com/m_seminar" target="_blank"><img src="../images/iconTw.png" width="20" height="20" alt="twitter"></a></li>
+              <li><a href="https://t.co/PtGWqwsb5g" target="_blank"><img src="../images/iconInsta.png" width="20" height="20" alt="Instagram"></a></li>
             </ul>
           </div>
         </nav>
@@ -79,7 +122,7 @@ div{
   margin: 100px;
 }</pre>
           <p>このように余白を設けたい要素にpaddingやmarginを指定することで要素間で空間を作る事ができます。paddingとmarginの違いについては以下の図を参照してください。</p>
-          <img src="images/padding&margin.jpg">
+          <img src="../images/padding&margin.jpg">
           <p>borderは、その要素の縁を囲ったりするときに使うものなので余白を作る時には用いません。borderを指定しない限りどちらで余白をとっても同じと考えても良いでしょう。</p>
           <h5>Tips</h5>
           <p>解像度によって異なりますが、1cm＝96pxです。詳しくは<a href="css.html">CSSの基礎</a>の値と単位についてを参照</p>
@@ -119,7 +162,7 @@ p{
         </header>
         <div class="inner">
           <div class="article">
-            <img src="images/soroeru.png" width="370" height="224" alt="">
+            <img src="../images/soroeru.png" width="370" height="224" alt="">
             <br>
             <p>上のようにサイト全体を格子上に捉えることでそれぞれの要素を配置しやすくなります。それに加えて図の大きさや文章の長さなどを揃えることも印象をかなり良くします。</p>
             <p>しかし、新聞記事のように見出しや小さな図が入る場合は、最初のようにグリッドを応用する必要があります。そこで以下ではグリッドレイアウトについて説明します。</p>
@@ -180,7 +223,7 @@ p{ grid-column: 2 / 3}
 
 img{ grid-column: 4 / 5}</pre>
           <h4>完成例</h4>
-          <img src="images/grid_kansei1.png" >
+          <img src="../images/grid_kansei1.png" >
           <p>
             上から一つずつ見てみましょう。まずhtmlファイルをみてみると目次や文章や画像などの５つの要素があることがわかります。これらの要素をcssのgridを用いいて大雑把に配置していきます。<br>
             まず初めにbodyタグでdisplayプロパティをgridと指定しbodyの中身をグリッドレイアウトモードにします。
@@ -188,7 +231,7 @@ img{ grid-column: 4 / 5}</pre>
             次に行の分割について、行はcolumnsの時と同様に「grid-template-columns: 100px auto auto;」のように書くこともできますが、今回は分かりやすくラインに名前をつけて幅を指定しますラインは<span style="color: red;">[]</span>で囲むことで名前をつけれます。
             ここまでを完成図で確認してみましょう。
           </p>
-          <img src="images/grid_kansei2.png" >
+          <img src="../images/grid_kansei2.png" >
           <p>
             このままでは完成図のようなものには、なりません。それぞれの要素をそれぞれのセルの中に配置していきましょう。要素の配置にはライン番号を用います。緑の列番号を見ていると左上の列から一つずつ数えます。また最後から「-1,-2」のように数えることもできます。青の行番号も同様です。<br>
             &lt;h1&gt;で囲まれる見出し部分は、最終的には一番上の真ん中あたりに表示したいのでcssでh1要素に対して「grid-column: 2 / -2;」を指定します。これは列番号2番目から最後から2番目の列の中に配置するという意味です。さらに行について「grid-row: head;」を指定します。行も列と同様に「grid-row: 1 / 2;」と指定することもできますが今回は行名を指定しているのでそれを用いましょう。
@@ -202,12 +245,12 @@ img{ grid-column: 4 / 5}</pre>
 
           <div class="article">
             <h3>タイトルより上に中身を書かない</h3>
-            <img src="images/titleiti.png" width="370" height="224" alt="タイトルの位置">
+            <img src="../images/titleiti.png" width="370" height="224" alt="タイトルの位置">
             <p>人は普通、左上から右下に目が動きます。そのため、左上にタイトルをつけた場合、そのタイトルに関連する内容はタイトルよりも右下にある方が読みやすくなります。決して内容をタイトルの真横やそれよりも上に書かないようにしましょう。</p>
           </div>
           <div class="article">
             <h3>収まりの悪いイラストやグラフは四角で囲う</h3>
-            <img src="images/sorottemieru.png" width="400" height="200" alt="タイトルの位置">
+            <img src="../images/sorottemieru.png" width="400" height="200" alt="タイトルの位置">
             <p>上で説明したようにサイトの要素はできるだけ位置を揃えて配置したほうが見やすくなります。しかし位置を揃えにくい要素や、位置を揃えても揃って見えない要素も存在します。具体的にはイラストやグラフなどは輪郭が曖昧なので、位置を合わせてもフワフワと余白に浮いているように見えてしまいます。このような場合は、要素の背景に薄い灰色(既存の色と同色系)の四角形などを適用すると効果的です。便利なテクニックですが「囲い・枠」が多くなると全体が煩雑になるので汎用は避けましょう。また背景色に濃い色を使うのも美しくありません。</p>
           </div>
         </div>
@@ -282,17 +325,23 @@ border-radius: 枠の太さ;   border-style: 形;   border-color: 色;
         <div class="innerS">
           <h3>ジャンプ率を高めてコントラストをつける</h3>
           <p>「ジャンプ率」とは、本文の文字サイズに対するタイトルや見出しの文字サイズの比率のことです。ジャンプ率が低いと落ち着いた印象になり、ジャンプ率が高いと躍動感のある印象になります。ポスターやスライドでは、通常、タイトルはとても重要です。タイトルには、自分の言いたいことが凝縮してあるからです。下の例のように、タイトルのジャンプ率を高くすればするほど、タイトルが強調されていることがわかります。絶対的な大きさではなく、本文に対する相対的な大きさが、目立ちやすさや躍動感を決めているのです。</p>
-          <img src="images/jumprate.png" >
+          <img src="../images/jumprate.png" >
           <h3>アイキャッチャーでさらに魅力的に!</h3>
           <p>どんなポスターでも、内容を見てもらうためには、まず人の目を引くものでなくてはなりません。歩いている人の目を引くかどうかは、0.3秒で決まるといわれています。この一瞬を逃さないようにポスターを作ると、より効果的なポスターができます。内容で目立つことが最も大切なことですが、見た目で目立つこともある程度重要です。ただし、ただ目立たせればいいという訳ではありません。あまりに派手な色にしてしまうと、いざ読もうとしたときに読みづらいポスターになってしまいます。<br>そこで、可読性を損なわずに、一瞬で人の目を捉えるための素材が必要になります。このような素材はアイキャッチャーと呼ばれます。文字や図形、イラスト、写真などを効果的なアイキャッチャーにすることができます。例えば、文字の邪魔にならない範囲で背景に大きな絵を入れたり、研究を代表するような写真や絵を大きめに配置することで、人の目を引くことができます。大きい文字も人の気持ちをつかむにはもってこいのアイテムです。タイトルを大きくするのは効果的です。大きな円やギザギザの円は、さらに効果的なアイキャッチャーになります。雑誌の表紙やテレビCMを見ていると、こういったアイキャッチャーが目につきます。そういったものも参考にしながら、好みのアイキャッチャーを配置してみるとよいかもしれません。</p>
-          <img src="images/eyecatcher.png">
+          <img src="../images/eyecatcher.png">
         </div>
       </section>
-    </div>
-    <div class="end">
-      <ul>
-        <li><a href="layout2.html">レイアウト2</a></li>
-      </ul>
+
+      <div class="nav-links">
+        <a class="prev page-numbers" href="design.html">«</a><!-- 現在の前のページへのリンク -->
+        <a class="page-numbers" href="design.html">1</a>
+        <span class="page-numbers current" href="layout.html">2</span>
+        <a class="page-numbers" href="layout2.html">3</a>
+        <a class="page-numbers" href="layout3.html">4</a>
+        <a class="page-numbers" href="responsive.html">5</a>
+        <a class="next page-numbers" href="layout2.html">»</a><!-- 現在の次のページへのリンク -->
+      </div>
+
     </div>
   </div>
 

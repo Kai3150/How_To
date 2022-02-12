@@ -5,15 +5,59 @@
   <meta name="description" content="layout">
   <meta name="viewport" content="width=device-width">
   <title>チュートリアル１</title>
-  <link rel="stylesheet" media="all" href="css/style.css">
-  <link href="code-prettify/prettify.css" type="text/css" rel="stylesheet">
-  <script type="text/javascript" src="code-prettify/prettify.js"></script>
+  <link rel="stylesheet" media="all" href="../css/style.css">
+  <link href="../code-prettify/prettify.css" type="text/css" rel="stylesheet">
+  <script type="text/javascript" src="../code-prettify/prettify.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-  <script src="js/script.js"></script>
+  <script src="../js/script.js"></script>
 </head>
 
 <body id="top" onload="prettyPrint()">
   <div id="wrapper">
+    
+    <div class="header">
+      <div class="cp_navi">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li>
+            <a href="#">初心者編<span class="caret"></span></a>
+            <div>
+              <ul>
+                <li><a href="../level1/tutorial1.html">チュートリアル1</a></li>
+                <li><a href="../level1/tutorial2.html">チュートリアル2</a></li>
+                <li><a href="../level1/tutorial3.html">チュートリアル3</a></li>
+                <li><a href="../level1/css.html">CSSについて</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">中級者編<span class="caret"></span></a>
+            <div>
+              <ul>
+                <li><a href="../level2/design.html">デザインとは</a></li>
+                <li><a href="../level2/layout.html">レイアウト1</a></li>
+                <li><a href="../level2/layout2.html">レイアウト2</a></li>
+                <li><a href="../level2/layout3.html">レイアウト3</a></li>
+                <li><a href="../level2/responsive.html">レスポンシブ</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">上級者編<span class="caret"></span></a>
+            <div>
+              <ul>
+                <li><a href="../level3/deploy.html">デプロイ</a></li>
+                <li><a href="../level3/seo.html">SEO</a></li>
+                <li><a href="../level3/marketing.html">マーケティング</a></li>
+                <li><a href="../level3/idea.html">アイデア</a></li>
+                <li><a href="../level3/law.html">法律</a></li>
+                <li><a href="../level3/history.html">歴史</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
 
     <div id="sidebar">
       <div id="sidebarWrap">
@@ -28,8 +72,8 @@
               <li><a href="#sec03">HTMLファイルの作成、記述、アップロード</a></li>
             </ul>
             <ul id="sns">
-              <li><a href="https://twitter.com/m_seminar" target="_blank"><img src="images/iconTw.png" width="20" height="20" alt="twitter"></a></li>
-              <li><a href="https://t.co/PtGWqwsb5g" target="_blank"><img src="images/iconInsta.png" width="20" height="20" alt="Instagram"></a></li>
+              <li><a href="https://twitter.com/m_seminar" target="_blank"><img src="../images/iconTw.png" width="20" height="20" alt="twitter"></a></li>
+              <li><a href="https://t.co/PtGWqwsb5g" target="_blank"><img src="../images/iconInsta.png" width="20" height="20" alt="Instagram"></a></li>
             </ul>
           </div>
         </nav>
@@ -73,15 +117,15 @@
             （ここからVSCodeをインストールする方法を説明します。すでに自分のPCにインストールされている方は読み飛ばしても問題ありません。）
             まずはVSCodeの公式サイト (<a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a>) にアクセスします。画面左側に表示されている「ダウンロード」のボタンをクリックし、インストールに必要なファイルをダウンロードしてください。
           </p>
-          <img src="images/vscode0.png" alt="VSCodeの公式サイト">
+          <img src="../images/vscode0.png" alt="VSCodeの公式サイト">
           <br>
           <p>Finderでダウンロードしたファイルを確認します。</p>
-          <img src="images/Finder.png" alt="ダウンロード">
+          <img src="../images/Finder.png" alt="ダウンロード">
           <br>
           <p>ファイルをダブルクリックすることで、以下のようなVSCodeのアイコンが表示されます。</p>
-          <img src="images/Finder2.png" alt="ダウンロード">
+          <img src="../images/Finder2.png" alt="ダウンロード">
           <p>このアイコンをダブルクリックし、VSCodeを開きましょう。始めは少し時間がかかるかと思いますが、以下のようなウィンドウが表示されれば完了です</p>
-          <img src="images/vscode1.png" alt="vscodeのトップ画面">
+          <img src="../images/vscode1.png" alt="vscodeのトップ画面">
 
         </div>
 
@@ -96,9 +140,9 @@
             MacやiPhoneでは標準で「Safari」がインストールされているかと思います。これらのブラウザでも問題はありませんが、今回は「Google Chrome」というブラウザをインストールして用いましょう。
             Chromeの公式ページ（ <a href="https://www.google.co.jp/chrome/">https://www.google.co.jp/chrome/</a>）にアクセスし、画面中央の「Chrome をダウンロード」という青いボタンをクリックしてダウンロードを開始しましょう。
           </p>
-          <img src="images/chrome0.png" alt="Chromeのダウンロード画面">
+          <img src="../images/chrome0.png" alt="Chromeのダウンロード画面">
           <p>先ほどのVSCodeの時と同様の手順でダウンロードしたファイルを開き、インストールを完了させてください。以下のようにChromeを開くことができれば完了です。</p>
-          <img src="images/chrome1.png" alt="Chromeのトップページ">
+          <img src="../images/chrome1.png" alt="Chromeのトップページ">
           <p>これでWebページを開発するために必要な「道具」は揃いました！</p>
 
         </div>
@@ -167,6 +211,15 @@
           <p>その後、FTPソフトを開いてHTMLファイルを選択します。そのままWebサーバーにHTMLファイルをアップロードし、Webサーバーに設定しているアドレスをWebブラウザのアドレスバーへ入力して、HTMLファイルの内容が表示されるように設定しましょう。</p>
         </div>
       </section>
+
+      <div class="nav-links">
+        <span class="page-numbers current" href="tutorial1.html">1</span>
+        <a class="page-numbers" href="tutorial2.html">2</a>
+        <a class="page-numbers" href="tutorial3.html">3</a>
+        <a class="page-numbers" href="css.html">4</a>
+        <a class="next page-numbers" href="tutorial2.html">»</a><!-- 現在の次のページへのリンク -->
+      </div>
+
 
     </div>
 

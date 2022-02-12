@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="layout">
+  <meta name="viewport" content="width=device-width">
+  <title>インターネットへの公開(デプロイ)</title>
+  <link rel="stylesheet" media="all" href="../css/style.css">
+  <link href="../code-prettify/prettify.css" type="text/css" rel="stylesheet">
+  <script type="text/javascript" src="../code-prettify/prettify.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+  <script src="../js/script.js"></script>
+</head>
+
+<body id="top" onload="prettyPrint()">
+  <div id="wrapper">
+
+    <div class="header">
+      <div class="cp_navi">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li>
+            <a href="#">初心者編<span class="caret"></span></a>
+            <div>
+              <ul>
+                <li><a href="../level1/tutorial1.html">チュートリアル1</a></li>
+                <li><a href="../level1/tutorial2.html">チュートリアル2</a></li>
+                <li><a href="../level1/tutorial3.html">チュートリアル3</a></li>
+                <li><a href="../level1/css.html">CSSについて</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">中級者編<span class="caret"></span></a>
+            <div>
+              <ul>
+                <li><a href="../level2/design.html">デザインとは</a></li>
+                <li><a href="../level2/layout.html">レイアウト1</a></li>
+                <li><a href="../level2/layout2.html">レイアウト2</a></li>
+                <li><a href="../level2/layout3.html">レイアウト3</a></li>
+                <li><a href="../level2/responsive.html">レスポンシブ</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">上級者編<span class="caret"></span></a>
+            <div>
+              <ul>
+                <li><a href="../level3/deploy.html">デプロイ</a></li>
+                <li><a href="../level3/seo.html">SEO</a></li>
+                <li><a href="../level3/marketing.html">マーケティング</a></li>
+                <li><a href="../level3/idea.html">アイデア</a></li>
+                <li><a href="../level3/law.html">法律</a></li>
+                <li><a href="../level3/history.html">歴史</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="sidebar">
+      <div id="sidebarWrap">
+
+        <nav id="mainnav">
+          <p id="menuWrap"><a id="menu"><span id="menuBtn"></span></a></p>
+          <div class="panel">
+            <ul>
+              <li><a href="#top">top</a></li>
+              <li><a href="#sec01">リンク</a></li>
+              <li><a href="#sec02">構造化データ</a></li>
+              <li><a href="#sec03">リッチスニペット</a></li>
+              <li><a href="#sec04">コンテンツの属性</a></li>
+              <li><a href="#sec05">ナレッジグラフ</a></li>
+              <li><a href="#sec06">サンプル</a></li>
+            </ul>
+            <ul id="sns">
+              <li><a href="https://twitter.com/m_seminar" target="_blank"><img src="../images/iconTw.png" width="20" height="20" alt="twitter"></a></li>
+              <li><a href="https://t.co/PtGWqwsb5g" target="_blank"><img src="../images/iconInsta.png" width="20" height="20" alt="Instagram"></a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div id="content">
+
+      <section>
+        <header>
+          <h2><span>インターネットへの公開</span></h2>
+        </header>
+        <div class="innerS">
+          <p>このページでは、作ったWebサイトを全世界の人が見れるようにするために、Webサイトをデプロイする工程について説明していきたいと思います。デプロイとは簡単に説明するとWebサイトを構成するHTMLファイルなどをサーバーにアップロードしそのサーバにインターネットからアクセスできるようにすることです。せっかく作ったWebサイトも誰にも見られないのであれば作った意味がありません。なのでデプロイは非常に重要な作業です。少し難しいですが、しなければならない事は決まっているので頑張って学んでいきましょう。</p>
+        </div>
+      </section>
+
+      <section id="sec01">
+        <header>
+          <h2><span>Amazon Simple Storage Service (S3)</span></h2>
+        </header>
+        <div class="innerS">
+          <h3>AWS、S3とは</h3>
+          <p>
+            AWSとはAmazon Web Servicesの略で、Amazonが提供している100以上のクラウドコンピューティングサービスの総称です。
+            クラウドコンピューティングとは、インターネットを介してサーバー・ストレージ・データベース・ソフトウェアといったコンピューターを使った様々なサービスを利用することを指します。
+            クラウドコンピューティングでは、手元に1台のPCとインターネットに接続できる環境さえあれば、サーバーや大容量のストレージ、高速なデータベースなどを必要な分だけ利用できるわけです。
+            その中のサービスで今回はS3というものを使っていきます。S3はデータを「オブジェクト」単位で「バケット」に保存するストレージサービスで
+            S3をWebサーバとしてみなし、HTML・CSS・Javascriptなどをアップロードし、静的Webサイトを構築する時などに使います。
+          </p>
+          <h3>AWSアカウントの作成</h3>
+          <p>AWSのサービスを使うにはAWSのアカウントを作る必要があります。</p>
+        </div>
+      </section>
+
+      <section id="sec02">
+        <header>
+          <h2><span>AWSアカウントの作成</span></h2>
+        </header>
+        <div class="inner">
+          <h3>ステップ 1: AWS アカウントの作成</h3>
+          <div class="article">
+            <img src="../images/aws1.jpg" width="370" height="224">
+            <ol>
+              <li><a href="https://portal.aws.amazon.com/billing/signup#/start" target="_blank">awsのサインアップページ</a>に移動</li>
+              <li>表示されたページが「日本語」でない場合、ページ右上の言語選択ボックスより「日本語」を選択後、サインアップ画面へお進みください。</li>
+              <li>「E メールアドレス」には、AWS へのログイン時に使用するメールアドレスを設定します。</li>
+              <li>パスワード」および「パスワードの確認」で AWS へのログイン時に使用するパスワードを設定し、確認用にもう一度同じパスワードを入力します。</li>
+              <li>AWS アカウント名」に、名前を半角アルファベットで入力します。入力が完了したら、「続行」ボタンをクリックします。</li>
+            </ol>
+          </div>
+
+          <h3>ステップ 2: 連絡先情報の入力</h3>
+          <div class="article">
+            <img src="../images/aws2.jpg" width="370" height="224">
+            <ol>
+              <li>個人の使用であれば「個人 - ご自身のプロジェクト向け」を選択します。</li>
+              <li>連絡先情報は、すべて「半角アルファベットおよび半角数字」 で入力します。</li>
+
+              <ul>
+                <li>電話番号： 電話番号をハイフン・記号なしで入力します。<br>(例 : 0312345678)</li>
+                <li>住所： 住所の番地、建物名等を入力します。<br>(例 : 1-1-1, Kamiosaki ABC Building)</li>
+                <li>市区町村： 住所の市区町村名を入力します。<br>(例 : Shinagawa-ku)</li>
+                <li>州/都道府県または地域： ご住所の都道府県名を入力します。<br>(例 : Tokyo)</li>
+                <li>郵便番号： 住所の郵便番号をハイフン付きで入力します。<br>(例 : 141-0021)</li>
+              </ul>
+
+              <li>AWS カスタマーアグリーメント (利用規約) に同意の上、③ のチェックボックスをクリックし、「続行」ボタンをクリックします。</li>
+            </ol>
+          </div>
+
+
+          <h3>ステップ 3: 請求情報の入力</h3>
+          <div class="article">
+            <img src="../images/aws3.jpg" width="370" height="224">
+            <ol>
+              <li>AWS 無料利用枠内の利用に対し、料金は発生しません。</li>
+              <li>有効なクレジットカードまたはデビットカード情報を入力します。カード番号、有効期限などの情報に間違いのないようお気をつけください。</li>
+              <li>請求先住所を選択します。前のステップで入力した住所と同様の場合は、「連絡先住所を使用する」を選択します。アカウント作成時に入力した住所と異なる請求先となる場合は、「新しい住所を使用する」を選択して、請求先住所を入力します。</li>
+              <li>入力が完了したら、「確認して次へ」ボタンをクリックします。</li>
+            </ol>
+          </div>
+
+
+          <h3>ステップ 4: SMS または音声電話による本人確認</h3>
+          <div class="article">
+            <img src="../images/aws4.jpg" width="370" height="2">
+            <ol>
+              <li>① で検証コードの受け取り方法を選択します。</li>
+              <li>国コードで、国を選択し、電話番号を ②にハイフン・記号なしで入力します。（例：09012345678）</li>
+              <li>③で、セキュリティチェック文字列として表示された英数字を入力します。</li>
+              <li>入力が完了したら、SNS の場合「SNS を送信する」、音声通話の場合「今すぐ呼び出し」ボタンをクリックします。</li>
+              <li>SMS または電話（日本語自動音声）で 4 桁の 検証コードが届きます。検証コードが届いたら入力欄に検証コードを入力し、「続行」ボタンをクリックします。</li>
+            </ol>
+            <img src="../images/aws5.jpg" width="370" height="224">
+          </div>
+
+          <h3>ステップ 5: AWS サポートプランの選択</h3>
+          <div class="article">
+            <img src="../images/aws6.jpg" width="370" height="224">
+            <ol>
+              <li>今回はS3を使うだけなので「ベーシックサポート」を選択します。</li>
+              <li>選択が完了したら、「サインアップを完了」ボタンをクリックします。</li>
+            </ol>
+          </div>
+          <p>以上でAWSアカウントの作成は終わりです。それでは早速S3を用いてファイルをアップロードしていきましょう。</p>
+
+        </div>
+      </section>
+
+
+      <section id="sec03">
+        <header>
+          <h2><span>S3を用いてデプロイする。</span></h2>
+        </header>
+        <div class="innerS">
+          <img src="../images/s31.jpg">
+          <p>ヘッダーの「サービス」から「ストレージ」カテゴリーに「S3」が表示されているので、選択します。<br>※検索窓で「S3」と検索しても表示されます。</p>
+
+          <img src="../images/s32.png">
+          <p>S3のコンソール画面には既に作成したバケットがある場合、一覧形式で表示されます。バケットとはこれからアップロードするHTMLファイルなどを保存していく場所(バケツ)のことです。新規でバケットを追加したい場合、「バケットを作成」ボタンをクリックします。</p>
+
+          <img src="../images/s33.png">
+          <p>バケット名やリージョンを選択して、バケットを作成するわけですが、上述したようにバケット名は全ユーザーの保持するバケットで一意である必要があります。リージョンは、データを保管しておくサーバの場所のことです。</p>
+
+          <img src="../images/s34.png">
+          <p>その他様々なオプション項目が設定可能ですが、今回はサンプルなのでデフォルトのまま画面下部の「バケットを作成」ボタンをクリックします。</p>
+
+          <img src="../images/s35.png">
+          <p>サンプルの場合、「sample55555」というバケットを「ap-northeast-1(東京リージョン)」に作成出来たことが分かります。</p>
+
+          <img src="../images/s36.png">
+          <p>作成した「sample55555」をクリックすると、上記の画面が表示されるので「アップロード」ボタンをクリックします。</p>
+
+          <img src="../images/s37.png">
+          <p>「ファイルを追加」ボタンをクリックすると、ダイアログが表示されます。今回は以下のindex.htmlというファイルを選択します。</p>
+          <pre class="prettyprint linenums">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;sample&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Hello W0rld&lt;/h1&gt;
+        &lt;p&gt;This is sanple page&lt;/p&gt;
+        &lt;/body&gt;
+&lt;/html&gt;</pre>
+        </div>
+        <div class="innerS">
+          <img src="../images/s38.png">
+          <p>選択できたら右下のアップロードを押してください。これでファイルのアップロードは完成したので次に公開の為の設定を少しだけします。</p>
+
+          <img src="../images/s39.png">
+          <p>次に先ほどのバケットを選択したページに戻り「プロパティ」を選択します。</p>
+
+          <img src="../images/s310.png">
+          <p>そのページの一番下の方にある「静的ウェブサイトホスティング」の編集をクリックします。</p>
+
+          <img src="../images/s311.png">
+          <p>この設定することで、S3バケットに置いているHTMLを表示できるようになります。「インデックスドキュメント」について今回はトップページはindex.htmlなのでその名前を入力します。最後に一番下にある「変更の保存」をクリックします。</p>
+
+          <img src="../images/s312.png">
+          <p>次に先ほどのバケットを選択したページに戻り「アクセス許可」を選択します。さらにその中のブロックパブリックアクセス(バケット設定)の編集を選択します。</p>
+
+          <img src="../images/s313.png">
+          <p>全てのブロックを解除し、変更の保存をクリックします。ブロックのアクセスと聞いて少し抵抗があると思いますが、このブロックを解除してもどこからでもアクセスできるわけはありません。簡単にこのブロックアクセスについて言うと、アクセスを許可することの許可という意味です。</p>
+
+          <img src="../images/s314.png">
+          <p>警告が出ますが気にせず確認を入力します。</p>
+
+          <img src="../images/s315.png">
+          <p>次にバケットポリシーの編集を選択します。以下をポリシーに入力してください。</p>
+          <pre class="prettyprint linenums">
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::【ここをバケット名に置換】/*"
+        }
+    ]
+}</pre>
+        </div>
+        <div class="innerS">
+          <img src="../images/s316.png">
+          <p>このサンプルの場合上のようになります。入力が完了しら「変更の保存」をクリックしましょう。</p>
+
+          <img src="../images/s317.png">
+          <p>これでs3の設定は以上です。ブラウザで確認するために「URLをコピー」を選択してブラウザに表示してみましょう。</p>
+
+          <img src="../images/s318.png">
+          <p>うまくブラウザに表示できましたか？以上でインターネットへの公開の仕方は以上です。今回の方法は、単純なHTML,CSS,Javascriptファイルなどのサーバー内での処理を必要としない(静的Webサイト)をデプロイするためのシンプルな方法です。Webアプリケーションのような動的なWebページをデプロイするには、他の方法を使う必要があります。</p>
+        </div>
+      </section>
+
+
+      <div class="nav-links">
+        <span class="page-numbers current" href="deploy.html">1</span>
+        <a class="page-numbers" href="seo.html">2</a>
+        <a class="page-numbers" href="marketing.html">3</a>
+        <a class="page-numbers" href="idea.html">4</a>
+        <a class="page-numbers" href="law.html">5</a>
+        <a class="page-numbers" href="history.html">6</a>
+        <a class="next page-numbers" href="seo.html">»</a><!-- 現在の次のページへのリンク -->
+      </div>
+
+
+    </div>
+  </div>
+
+</body>
+</html>
