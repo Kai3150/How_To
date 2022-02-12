@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="layout">
+  <meta name="viewport" content="width=device-width">
+  <title>色について</title>
+  <link rel="stylesheet" media="all" href="../css/style.css">
+  <link href="../code-prettify/prettify.css" type="text/css" rel="stylesheet">
+  <script type="text/javascript" src="../code-prettify/prettify.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+  <script src="../js/script.js"></script>
+</head>
+
+<!--
+	gitの使い方：
+  https://gitforwindows.org から install
+  (Windowsの人は)git CMD を開く
+	git config --global user.name "ユーザーネーム"
+	git config --global user.email メールアドレス
+	//上の二つはしてない人だけで良いです。
+  空のフォルダーに移動する。
+  git init
+	git clone https://github.com/Siro3150/How_To.git
+	git branch ブランチ名
+	git checkout ブランチ名
+	編集作業
+	git add .
+	git commit -m 'コメントを書く'
+	git push -u origin ブランチ名
+  not upstream が出た時
+  git pull origin
+  git push -u origin ブランチ名
+
+  origin = https://github.com/Siro3150/How_To.git の意味なので２回めからは,
+  省略してoriginと書くことができると思いますが、もしエラーが出た場合は,
+  ちゃんとurlを書いてください。
+
+
+	２回め以降の編集作業
+	git pull https://github.com/Siro3150/How_To.git
+		編集作業
+	git add .
+	git commit -m 'コメントを書く'
+	git push -u origin ブランチ名
+
+	テンプレートの説明：
+	(新しくページを作る時)
+	①ファイル名は小文字英語でメインコンテンツ名.htmlとすること。(seo.html) ファイル位置はとりあえずseo.htmlと同じ階層で。
+	②<meta content="">にファイル名と同じようにメインコンテンツ名を記述する。(例：seo)
+	③良い感じのを<title></title>に書く(例：SEO)
+
+	(コンテンツを追加する時)
+	④サイドバーのリストにコンテンツの名前とhrefにsection番号を新たに加える。(例：sec09)
+	⑤<div id="content"></div>内に以下のプログラムを加えてコンテンを記述。<section id="">に先ほどのリストに書いたsection番号を書く。
+
+			<section id="secXX">
+				<header>
+					<h2><span>コンテンツ名</span></h2>
+				</header>
+				<div class="innerS">
+					<p>導入や思想、そのコンテンツがどのように役に立つかなど(できれば書いて欲しい)</p>
+					<h3>サブタイトル(なくても良い)</h3>
+					<p>説明</p>
+				</div>
+			</section>
+
+	⑥画像を用いて文章を説明したい時、⑤と同様に以下のプログラムを加える。(注：画像リンクはなるべくimagaesフォルダーにまとめること)
+
+
+			<section id="secXX">
+				<header>
+					<h2><span>コンテンツ名</span></h2>
+				</header>
+					<div class="inner">
+						<div class="article">
+							<img src="画像urlを記入" width="370" height="224" alt="">
+							<p>画像の右に表示される</p>
+							<p>画像右下あたりに表示される</p>
+						</div>
+						<div class="article">
+							<img src="画像urlを記入" width="370" height="224" alt="">
+							<p>＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃＃</p>
+						</div>
+					</div>
+			</section>
+
+
+	⑦画像を横並びに置いてその下に文章を書く場合、⑤と同様に以下のプログラムをコピペする。
+
+
+			<section id="secXX">
+				<header>
+					<h2><span>コンテンツ名</span></h2>
+				</header>
+				<div class="inner">
+					<ul class="col4">
+						<li>
+							<p class="img"><img src="url" width="168" height="168" alt=""></p>
+							<p>画像の真下に表示される文章です</p>
+						</li>
+						<li>
+							<p class="img"><img src="url" width="168" height="168" alt=""></p>
+							<p>たくさんは書けません</p>
+						</li>
+						<li>
+							<p class="img"><img src="url" width="168" height="168" alt=""></p>
+							<p>リストは必要に応じて加えたり減らしたりしてください。</p>
+						</li>
+					</ul>
+				</div>
+			</section>
+
+  ⑧ソースコードを埋め込みたい時
+
+    <pre class="prettyprint linenums">
+      ソースコード
+    </pre>
+
+もっと詳しい説明：
+・全体を大きくheader、content、footerに分かれておりcontentはさらにsectionごとに区切られている。
+・サイドナビゲーションのリンク先をsectionのidに指定することでページ内遷移をしている。
+・<div class="inner">と<div class="innerS">の違いは、innerの方が画像を含めた記事を載せるため横幅が広い。innerSの方は文章のみの説明となるので横幅が狭め
+・cssとjavascriptファイルはあまり気にしなくて良い。
+・後は自由に使いたいとこをコピペしたり、無駄なとこを消したりして使ってください。
+ -->
+
+<body id="top" onload="prettyPrint()">
+  <div id="wrapper">
+    <div class="header">
+      <div class="cp_navi">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li>
+            <a href="#">初心者編<span class="caret"></span></a>
+            <div>
+              <ul>
+                <li><a href="../level1/tutorial1.html">チュートリアル1</a></li>
+                <li><a href="../level1/tutorial2.html">チュートリアル2</a></li>
+                <li><a href="../level1/tutorial3.html">チュートリアル3</a></li>
+                <li><a href="../level1/css.html">CSSについて</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">中級者編<span class="caret"></span></a>
+            <div>
+              <ul>
+                <li><a href="../level2/design.html">デザインとは</a></li>
+                <li><a href="../level2/layout.html">レイアウト1</a></li>
+                <li><a href="../level2/layout2.html">レイアウト2</a></li>
+                <li><a href="../level2/layout3.html">レイアウト3</a></li>
+                <li><a href="../level2/responsive.html">レスポンシブ</a></li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">上級者編<span class="caret"></span></a>
+            <div>
+              <ul>
+                <li><a href="../level3/deploy.html">デプロイ</a></li>
+                <li><a href="../level3/seo.html">SEO</a></li>
+                <li><a href="../level3/marketing.html">マーケティング</a></li>
+                <li><a href="../level3/idea.html">アイデア</a></li>
+                <li><a href="../level3/law.html">法律</a></li>
+                <li><a href="../level3/history.html">歴史</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="sidebar">
+      <div id="sidebarWrap">
+
+        <nav id="mainnav">
+          <p id="menuWrap"><a id="menu"><span id="menuBtn"></span></a></p>
+          <div class="panel">
+            <ul>
+              <li><a href="#top">top</a></li>
+              <li><a href="#sec01">色の種類</a></li>
+              <li><a href="#sec02">色の3属性</a></li>
+              <li><a href="#sec03">トーン</a></li>
+              <li><a href="#sec04">色の印象</a></li>
+              <li><a href="#sec05"></a></li>
+              <li><a href="#sec06"></a></li>
+            </ul>
+            <ul id="sns">
+              <li><a href="https://twitter.com/m_seminar" target="_blank"><img src="../images/iconTw.png" width="20" height="20" alt="twitter"></a></li>
+              <li><a href="https://t.co/PtGWqwsb5g" target="_blank"><img src="../images/iconInsta.png" width="20" height="20" alt="Instagram"></a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+
+    <div id="content">
+
+      <section>
+        <header>
+          <h2><span>色について</span></h2>
+        </header>
+        <div class="innerS">
+          <p>
+            背景と色の組み合わせを学ぶにあたり、色に関する前提知識についてここで学習します。色に関する基本ですが、
+            知らないことがある場合、前提として理解しておくようにしましょう。
+          </p>
+          <p>
+            色は、デザインの大きな部分を占めます。「あなたが作るコンテンツをどう見せるか」を考える際に、心強いツールと
+            なりえます。プロでも難しい部分ですが、十分に使いこなして下さい。
+          </p>
+        </div>
+      </section>
+
+      <section id="sec01">
+        <header>
+          <h2><span>色の種類</span></h2>
+        </header>
+        <div class="inner">
+          <div class="article">
+            <img src="../images/color1.png" width="370" height="224" alt="無彩色と有彩色">
+            <p>
+              色は、大きく分けると「無彩色」と「有彩色」に分かれます。無彩色はグレーやブラックなどの色味がない色で、
+              有彩色は赤、青などの色味を持つ色の総称です。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="sec02">
+        <header>
+          <h2><span>色の3属性</span></h2>
+        </header>
+        <div class="innerS">
+          <p>色は3つの属性を持っています。以下で紹介します。</p>
+        </div>
+        <div class="inner">
+          <div class="article">
+            <img src="../images/color2.png" width="370" height="224" alt="色相">
+            <p>
+              一つ目は<b>色相</b>です。「色味の違い」のことであり、代表的な色を集めたものを<b>色相環</b>といいます。（右写真）
+            </p>
+            <p>
+              色相環において隣り合う色のことを<b>「類似色」</b>といい、反対側にある色のことを<b>「補色」</b>といいます。補色は、色相の差が
+              大きいので、見た人にインパクトを与える配色になります。
+              また、補色の両サイドの色のことを<b>「反対色」</b>といいます。反対色は補色と同じように色相の差があるものの、
+              補色よりも調和しやすく、洗練された配色に向いています。
+            </p>
+          </div>
+          <div class="article">
+            <img src="../images/color3.gif" width="370" height="224" alt="彩度">
+            <p>
+              二つ目は彩度です。「色の鮮やかさ」のことであり、もっとも彩度が高い色を純色といいます。
+              一方、もっとも彩度が低いのは無彩色です。
+            </p>
+          </div>
+          <div class="article">
+            <img src="../images/color4.png" width="370" height="224" alt="明度">
+            <p>
+              三つめは明度です。「色の明るさの度合い」のことです。明度が高くなると白に近づき、明度が低くなると
+              黒に近づきます。
+            </p>
+            <p></p>
+          </div>
+        </div>
+      </section>
+
+
+      <section id="sec03">
+        <header>
+          <h2><span>トーン</span></h2>
+        </header>
+        <div class="innerS">
+          <p>
+            3つの属性のうち、明度と彩度の組み合わせで表されるのがトーンであり、「色の調子」とも呼ばれます。
+            以下のトーン図に代表的なトーン名を示しています。
+          </p>
+          <img src="../images/color5.png" alt="トーン">
+          <p>トーンのうち、いくつかについてどんな印象を与えるかについて以下で紹介しています。</p>
+        </div>
+        <div class="inner">
+          <ul class="col4">
+            <li>
+              <p class="img"><img src="../images/color6.png" width="168" height="168" alt="ペール"></p>
+              <p>軽い、あっさり、弱弱しい、優しい、淡い</p>
+            </li>
+            <li>
+              <p class="img"><img src="../images/color7.png" width="168" height="168" alt="ダーク"></p>
+              <p>知的、大人、かっこいい、スタイリッシュ</p>
+            </li>
+            <li>
+              <p class="img"><img src="../images/color8.png" width="168" height="168" alt="グレイッシュ"></p>
+              <p>濁った、地味な、落ち着いた、都会的</p>
+            </li>
+          </ul>
+        </div>
+
+      </section>
+
+      <section id="sec04">
+        <header>
+          <h2><span>色の印象</span></h2>
+        </header>
+        <div class="innerS">
+          <p>
+            色それぞれが持っている印象というものがあります。一般的に人間が色からどういった印象を受けるかということは
+            既にある程度調べられており、それを用いて印象を変えることが多く行われています。例えば信号機などに黄色と黒が
+            使われているのは注意を引くためです。
+          </p>
+          <p>
+            しかし、色の印象を過信しすぎてもいけません。人による幅が大きいからです。また、色の知識があるかないかによっても
+            大きく変わります。したがって、あくまでもサブ的に仕掛けるのがよいと思われます。
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <div class="innerS">
+          <a href="design.html">ユニバーサルデザインに戻る</a>
+        </div>  
+      </section>
+
+    </div>
+  </div>
+
+</body>
+</html>
