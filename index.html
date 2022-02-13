@@ -1,119 +1,228 @@
-<!doctype html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="description" content="layout">
-  <meta name="viewport" content="width=device-width">
-  <title>トップページ</title>
-  <link rel="stylesheet" media="all" href="css/style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-  <script src="js/script.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="layout">
+    <link rel="shortcut icon" href="http://wheelnavjs.softwaretailoring.net/wheelnav_favicon.png">
+    <link rel="stylesheet" media="all" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <title>トップページ</title>
+    <script type="text/javascript" src="wheelnav.js-1.7.1/raphael.min.js"></script>
+    <script type="text/javascript" src="wheelnav.js-1.7.1/wheelnav.min.js"></script>
+
+    <style>
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        header {
+            font-size: x-large;
+            text-align: center;
+            background-color: #555;
+            color: #ddd;
+            padding: 5px;
+            font-family: Helvetica, sans-serif;
+            margin-bottom: 50px;
+        }
+
+            header a {
+                background-color: #ddd;
+                color: #555;
+                text-decoration: none;
+                padding: 0 3px 0 3px;
+            }
+
+                header a:hover {
+                    background-color: #555;
+                    color: #ddd;
+                    text-decoration: underline;
+                }
+
+        .inner{
+            display: table;
+            width: 60%;
+        }
+        #para{
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        #topic{
+            margin: 0 auto 0 auto;
+        }
+
+        #wheelDiv {
+            height: 400px;
+            width: 400px;
+            margin: auto;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        #wheelDiv>svg {
+            height: 100%;
+            width: 100%;
+        }
+
+        #btn {
+            margin-top: 10px;
+        }
+
+        .btn--orange, a.btn--orange {
+        padding: 5 auto 0 auto;
+        justify-self: center;
+        padding: 10px;
+        color: #fff;
+        background-color: #eb6100;
+        }
+
+        .btn--orange:hover,
+        a.btn--orange:hover {
+        color: #fff;
+        background: #f56500;
+        }
+
+        a.btn--radius {
+        border-radius: 100vh;
+        }
+
+        @media (max-width: 600px) {
+            #wheelDiv {
+                height: 350px;
+                width: 350px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            #wheelDiv {
+                height: 300px;
+                width: 300px;
+            }
+        }
+        @media (max-width: 1000px) {
+            .inner{
+                  display:flex !important;
+                  flex-flow: column;
+            }
+
+            #pre{
+                display: block !important;
+            }
+        }
+        /* Insert generated CSS code from here -> http://pmg.softwaretailoring.net */
+
+    </style>
+
+    <script type="text/javascript">
+
+        window.onload = function () {
+
+            var wheel = new wheelnav("wheelDiv");
+            wheel.initWheel(["Top", "Beginner", "Middle", "Advanced"]);
+
+            //This is the place for code snippets from the documentation -> http://wheelnavjs.softwaretailoring.net/documentation.html
+            wheel.selectedNavItemIndex = 0;
+            wheel.createWheel();
+
+            let top = document.getElementById("topic");
+            let top1 = document.getElementById("para1");
+            let btn = document.getElementById("btn");
+
+            wheel.navItems[0].navigateFunction = function () {
+                top.innerText = "目的";
+                top1.innerText = "このサイトの目的は、これを見終わったみなさんがユニークで新しいwebサービスを提供し、インターネット上にたくさんの面白いコンテンツが溢れるようになることです。しかし、そのようなコンテンツは一夕一朝には作れずましてや何もないところからは現れません。それを作るためには前提知識を必要とすることが多くあります。その為このサイトでは突飛なアイデアにとらわれずこれまでのWebを形成してきた先人たちの知識を組み合わせたアイデアを前提知識として紹介することでそれに基づいたユニークなWebサイトを作れるようにお手伝いします。このサイトは、特定の目的を持ったwebサイトをみなさんが作れることは目的にしていません。"
+                btn.innerHTML = '';
+            };
+            wheel.navItems[1].navigateFunction = function () {
+                top.innerText = "初心者編";
+                top1.innerText = "初心者編では、主にチュートリアルとしてWebサイトを作るための環境構築とHTML、CSSの基礎的な説明を行います。"
+                btn.innerHTML = '<p><a href="level1/tutorial1.html" class="btn btn--orange btn--radius">START</a></p>';
+            };
+            wheel.navItems[2].navigateFunction = function () {
+                top.innerText = "中級者編";
+                top1.innerText = "中級者編では、チュートリアルで学んだことを踏まえて、デザインについてさらに踏み込んでいこうと思います。"
+                btn.innerHTML = '<p><a href="level2/design.html" class="btn btn--orange btn--radius">START</a></p>';
+            };
+            wheel.navItems[3].navigateFunction = function () {
+                top.innerText = "上級者編";
+                top1.innerText = "上級者編では、Webサイトに関する「歴史」「アイデアの発想」「法律」「マーケティング」「SEO」などについて触れていこうと思います。Webサイト制作には直接的には関連のないこともありますがこれらを意識することで他とは異なるユニークさが生まれるはずです。"
+                btn.innerHTML = '<p><a href="level3/deploy.html" class="btn btn--orange btn--radius">START</a></p>';
+            };
+            //Insert generated JavaScript code from here -> http://pmg.softwaretailoring.net
+
+        };
+
+    </script>
+
 </head>
 
 <body id="top">
-  <div id="wrapper">
+    <div id="wrapper">
 
-    <div class="header">
-      <div class="cp_navi">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li>
-            <a href="#">初心者編<span class="caret"></span></a>
-            <div>
-              <ul>
-                <li><a href="level1/tutorial1.html">チュートリアル1</a></li>
-                <li><a href="level1/tutorial2.html">チュートリアル2</a></li>
-                <li><a href="level1/tutorial3.html">チュートリアル3</a></li>
-                <li><a href="level1/css.html">CSSについて</a></li>
-              </ul>
+        <div class="header" style="z-index: 10000;">
+            <div class="cp_navi">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li>
+                        <a href="#">初心者編<span class="caret"></span></a>
+                        <div>
+                            <ul>
+                                <li><a href="level1/tutorial1.html">チュートリアル1</a></li>
+                                <li><a href="level1/tutorial2.html">チュートリアル2</a></li>
+                                <li><a href="level1/tutorial3.html">チュートリアル3</a></li>
+                                <li><a href="level1/css.html">CSSについて</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">中級者編<span class="caret"></span></a>
+                        <div>
+                            <ul>
+                                <li><a href="level2/design.html">デザインとは</a></li>
+                                <li><a href="level2/layout.html">レイアウト1</a></li>
+                                <li><a href="level2/layout2.html">レイアウト2</a></li>
+                                <li><a href="level2/layout3.html">レイアウト3</a></li>
+                                <li><a href="level2/responsive.html">レスポンシブ</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">上級者編<span class="caret"></span></a>
+                        <div>
+                            <ul>
+                                <li><a href="level3/deploy.html">デプロイ</a></li>
+                                <li><a href="level3/seo.html">SEO</a></li>
+                                <li><a href="level3/marketing.html">マーケティング</a></li>
+                                <li><a href="level3/idea.html">アイデア</a></li>
+                                <li><a href="level3/law.html">法律</a></li>
+                                <li><a href="level3/history.html">歴史</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
             </div>
-          </li>
-          <li>
-            <a href="#">中級者編<span class="caret"></span></a>
-            <div>
-              <ul>
-                <li><a href="level2/design.html">デザインとは</a></li>
-                <li><a href="level2/layout.html">レイアウト1</a></li>
-                <li><a href="level2/layout2.html">レイアウト2</a></li>
-                <li><a href="level2/layout3.html">レイアウト3</a></li>
-                <li><a href="level2/responsive.html">レスポンシブ</a></li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <a href="#">上級者編<span class="caret"></span></a>
-            <div>
-              <ul>
-                <li><a href="level3/deploy.html">デプロイ</a></li>
-                <li><a href="level3/seo.html">SEO</a></li>
-                <li><a href="level3/marketing.html">マーケティング</a></li>
-                <li><a href="level3/idea.html">アイデア</a></li>
-                <li><a href="level3/law.html">法律</a></li>
-                <li><a href="level3/history.html">歴史</a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div id="sidebar">
-      <div id="sidebarWrap">
-
-        <nav id="mainnav">
-          <p id="menuWrap"><a id="menu"><span id="menuBtn"></span></a></p>
-          <div class="panel">
-            <ul>
-              <li><a href="#top">top</a></li>
-              <li><a href="#sec01">リンク</a></li>
-              <li><a href="#sec02">構造化データ</a></li>
-              <li><a href="#sec03">リッチスニペット</a></li>
-              <li><a href="#sec04">コンテンツの属性</a></li>
-              <li><a href="#sec05">ナレッジグラフ</a></li>
-              <li><a href="#sec06">サンプル</a></li>
-            </ul>
-            <ul id="sns">
-              <li><a href="https://twitter.com/m_seminar" target="_blank"><img src="images/iconTw.png" width="20" height="20" alt="twitter"></a></li>
-              <li><a href="https://t.co/PtGWqwsb5g" target="_blank"><img src="images/iconInsta.png" width="20" height="20" alt="Instagram"></a></li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-    </div>
-
-
-    <div id="content">
-
-
-      <section id="sec01">
-        <header>
-          <h2><span>サイトの目的</span></h2>
-        </header>
-        <div class="innerS">
-          <p>
-            このサイトの目的は、これを見終わったみなさんがユニークで新しいwebサービスを提供し、インターネット上にたくさんの面白いコンテンツが溢れるようになることです。しかし、そのようなコンテンツは一夕一朝には作れずましてや何もないところからは現れません。それを作るためには前提知識を必要とすることが多くあります。その為このサイトでは突飛なアイデアにとらわれずこれまでのWebを形成してきた先人たちの知識を組み合わせたアイデアを前提知識として紹介することでそれに基づいたユニークなWebサイトを作れるようにお手伝いします。
-            このサイトは、特定の目的を持ったwebサイトをみなさんが作れることは目的にしていません。しかし
-          </p>
-          <p>前提知識を得た後のクリエイティブな作業は、あなた次第です。</p>
-          <p>どうすればクリエイティブなものが作れるか</p>
-          <p>偶然を考える必要がある。深く考える必要がある。偶然をコントロールするには、前提知識が必要。偶然同士から共通点を見つけて、論理的にクリエイティブを実現する。</p>
-          <p>思考するためには言語(前提知識やさらに高度な概念)が必要で概念がよりメタ的であればあるほどクリエイティブになる。手元にある組み合わせが増えるから作戦がたくさん作れる。どの作戦が有効か考えるための基準をこのサイトで身につける。</p>
         </div>
-      </section>
 
+        <section id="sec01" style="border-style: none;">
 
-    <div class="nav-links">
-      <a class="prev page-numbers" href="">«</a><!-- 現在の前のページへのリンク -->
-      <a class="page-numbers" href="">1</a>
-      <span class="page-numbers current">2</span><!-- 現在閲覧しているページ -->
-      <a class="page-numbers" href="#">3</a>
-      <a class="page-numbers" href="#">27</a>
-      <a class="next page-numbers" href="#">»</a><!-- 現在の次のページへのリンク -->
+                <h2><span>サイトの目的</span></h2>
+
+            <div class="inner">
+
+                <div id="wheelDiv"></div>
+                <div id="para">
+                    <h2 id="topic">目的</h2>
+                    <p id="para1">このサイトの目的は、これを見終わったみなさんがユニークで新しいwebサービスを提供し、インターネット上にたくさんの面白いコンテンツが溢れるようになることです。しかし、そのようなコンテンツは一夕一朝には作れずましてや何もないところからは現れません。それを作るためには前提知識を必要とすることが多くあります。その為このサイトでは突飛なアイデアにとらわれずこれまでのWebを形成してきた先人たちの知識を組み合わせたアイデアを前提知識として紹介することでそれに基づいたユニークなWebサイトを作れるようにお手伝いします。このサイトは、特定の目的を持ったwebサイトをみなさんが作れることは目的にしていません。</p>
+                    <p id="btn"></p>
+                </div>
+
+            </div>
+        </section>
+
     </div>
-    </div>
-
-
-  </div>
 
 </body>
 </html>
